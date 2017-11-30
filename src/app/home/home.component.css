@@ -1,6 +1,27 @@
-.outer-body {
+.home-container {
   background-image: url(../../assets/images/bg_image.jpg);
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
+}
+
+.top-bar{
+	height: 60px;
+    background: white;
+}
+
+.top-bar-items{
+	margin-top: 20px;
+	color:#9faf14;
+	font-size: 15px;
+	font-weight:600;
+}
+
+.top-bar-items-left{
+
+}
+
+.top-bar-items-right{
+	width:40% !important;
+	float: right !important;	
 }
