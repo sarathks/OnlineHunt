@@ -1,0 +1,39 @@
+<div class="login-page">
+  <div class="form">
+    <form class="login-form">
+      <input type="text" placeholder="username"/>
+      <input type="password" placeholder="password"/>
+      <button (click)="login()" >login</button>
+      <p class="message">Not registered? <a (click)="register()" >Create an account</a></p>
+    </form>
+  </div>
+</div>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">REGISTER</h4>
+      </div>
+      <div class="container">
+      <label><b>Name</b></label>
+      <input type="text" placeholder="Enter Username" name="name" required>
+      <label><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <label><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+    </div>
+      <div class="modal-footer">
+        <button type="button" class="signupbtn" data-dismiss="modal">CREATE</button>
+      </div>
+    </div>
+
+  </div>
+</div>
