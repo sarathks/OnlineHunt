@@ -1,18 +1,31 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
+
+
+.login-container  {
+   background-image: url(../../assets/images/login.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
 .login-page {
+
   width: 360px;
   padding: 8% 0 0;
   margin: auto;
+
 }
 .form {
   position: relative;
   z-index: 1;
-  background: #FFFFFF;
+  background: #030201;
   max-width: 360px;
   margin: 0 auto 100px;
   padding: 45px;
   text-align: center;
+  border: 1px solid;
+  border-radius: 25px;
+  opacity: 0.8;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 .form input {
@@ -53,7 +66,7 @@
 font-family: Helvetica, Arial, Sans-Serif;
 }
 .form .message a {
-  color: #000000;
+  color: #ffffff;
   text-decoration: none;
   cursor: pointer;
   font-weight: 600;
