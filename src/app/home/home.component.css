@@ -7,7 +7,15 @@
 
 .top-bar{
 	height: 60px;
-    background: #050505;
+	cursor: pointer;
+    
+}
+
+.top-bar:hover { 
+    background-color:#2b2b2f;
+    -webkit-transition: background-color 400ms linear;
+    -ms-transition: background-color 400ms linear;
+    transition: background-color 400ms linear;
     border: 2px solid #4f4949;
 }
 

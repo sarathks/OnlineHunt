@@ -24,34 +24,39 @@
   margin: 0 0 15px;
   padding: 15px;
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: 16px;
+    font-family: 'Pacifico', cursive;
+
 }
 .form button {
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
+    font-family: 'Pacifico', cursive;
   outline: 0;
-  background: #4CAF50;
+  background: #2b2b2f;
   width: 100%;
   border: 0;
-  padding: 15px;
+  padding: 18px;
   color: #FFFFFF;
-  font-size: 14px;
+  font-size: 18px;
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
+  border: 1px solid;
+  border-radius: 50px;
 }
 .form button:hover,.form button:active,.form button:focus {
-  background: #43A047;
+  background: #2b2b2f;
 }
 .form .message {
   margin: 15px 0 0;
   color: #b3b3b3;
-  font-size: 12px;
+  font-size: 15px;
+font-family: Helvetica, Arial, Sans-Serif;
 }
 .form .message a {
-  color: #4CAF50;
+  color: #000000;
   text-decoration: none;
   cursor: pointer;
+  font-weight: 600;
 }
 .form .register-form {
   display: none;
@@ -113,7 +118,7 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 button {
-    background-color: #4CAF50;
+    background-color: #2b2b2f;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
