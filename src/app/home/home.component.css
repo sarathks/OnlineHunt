@@ -7,21 +7,26 @@
 
 .top-bar{
 	height: 60px;
-    background: white;
+    background: #050505;
+    border: 2px solid #4f4949;
 }
 
 .top-bar-items{
 	margin-top: 20px;
-	color:#9faf14;
-	font-size: 15px;
-	font-weight:600;
+	color:#ffffff;
+	font-size: 17px;
+	font-family: 'Pacifico', cursive;
 }
 
 .top-bar-items-left{
-
+	margin-left: 15px;
 }
 
 .top-bar-items-right{
-	width:40% !important;
-	float: right !important;	
+	width:46% !important;
+    cursor: pointer;
+}
+
+.top-bar-items-left div {
+	cursor: pointer;
 }
