@@ -7,6 +7,9 @@
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
+  color: #dddddd;
+  font-family: "Roboto", sans-serif;
+
 }
 .login-page {
 
@@ -63,7 +66,8 @@
   margin: 15px 0 0;
   color: #b3b3b3;
   font-size: 15px;
-font-family: Helvetica, Arial, Sans-Serif;
+  color: white;
+  font-family: "Roboto", sans-serif;
 }
 .form .message a {
   color: #ffffff;
@@ -108,6 +112,7 @@ font-family: Helvetica, Arial, Sans-Serif;
   color: #EF3B3A;
 }
 .modal-title{
+  margin-top:10px;
   text-align: center;
 }
 body {
@@ -131,10 +136,50 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 button {
-    background-color: #2b2b2f;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
 }
+
+.register-close{
+    color: white;
+    margin-top:-7px;
+    padding:0 !important;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.register-submit-button{
+  background-color: black;
+  color: white;
+  text-align: center;
+  border:1px solid;
+  border-radius: 30px;
+  padding:13px 40px 13px 40px;
+}
+
+.modal-header{
+  border:none;
+}
+
+.modal-content{
+  width: 85%;
+  z-index: 1;
+  background:#18181b;
+}
+
+.modal-footer{
+  border:none;
+  padding: 12px;
+  text-align: center;
+}
+
+input[type=text], input[type=password]{
+  margin-top: 1px;
+  margin-bottom: 7px;
+}
+
