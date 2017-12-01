@@ -84,6 +84,11 @@
   max-width: 300px;
   margin: 0 auto;
 }
+
+.container input{
+  color: black;
+}
+
 .container:before, .container:after {
   content: "";
   display: block;
@@ -170,6 +175,7 @@ button {
   width: 85%;
   z-index: 1;
   background:#18181b;
+  margin: 0 auto;
 }
 
 .modal-footer{
