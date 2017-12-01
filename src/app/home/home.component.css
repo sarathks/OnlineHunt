@@ -3,6 +3,7 @@
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 .top-bar{
