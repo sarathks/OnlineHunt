@@ -1,0 +1,46 @@
+.home-container {
+  /*background-image: url(../../assets/images/bg_image.jpg);*/
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+.top-bar{
+  height: 60px;
+  cursor: pointer;
+    
+}
+
+.top-bar:hover { 
+    background-color:#2b2b2f;
+    -webkit-transition: background-color 400ms linear;
+    -ms-transition: background-color 400ms linear;
+    transition: background-color 400ms linear;
+    border: 2px solid #4f4949;
+}
+
+.top-bar-items{
+  margin-top: 20px;
+  color:#ffffff;
+  font-size: 17px;
+  font-family: 'Pacifico', cursive;
+}
+
+.top-bar-items-left{
+  margin-left: 15px;
+}
+
+.top-bar-items-right{
+  width:46% !important;
+    cursor: pointer;
+}
+
+.top-bar-items-left div {
+  cursor: pointer;
+}
+.rules-section{
+  margin: 5% 15% 0 10%;
+  color: white;
+  font-size: 14px;
+}

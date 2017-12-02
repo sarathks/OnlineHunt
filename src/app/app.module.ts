@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes} from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LeaderBoardComponent } from './leader-board/leader-board.component';
+import { RulesComponent } from './rules/rules.component';
 
 const appRoutes:Routes = [
 {
@@ -19,6 +20,10 @@ const appRoutes:Routes = [
 {
   path:'leader-board',
   component: LeaderBoardComponent
+},
+{
+  path:'rules',
+  component: RulesComponent
 }
 ]
 
@@ -27,7 +32,8 @@ const appRoutes:Routes = [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    LeaderBoardComponent
+    LeaderBoardComponent,
+    RulesComponent
   ],
   imports: [
     BrowserModule,RouterModule.forRoot(appRoutes)
