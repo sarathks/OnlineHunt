@@ -1,27 +1,29 @@
 <div class ="home-container">
 	<div class = "row top-bar">
 		<div class="col-xs-6 top-bar-items top-bar-items-left">
-			<div class = "col-xs-4 col-md-2">Home</div>
-			<div class = "col-xs-4 col-md-2">Rules</div>
-			<div class = "col-xs-4 col-md-2">Leaderboard</div>
+			<div class = "col-xs-4 col-md-2" routerLink="/home">Home</div>
+			<div class = "col-xs-4 col-md-2" routerLink="/rules">Rules</div>
+			<div class = "col-xs-4 col-md-2" routerLink="/leader-board">Leaderboard</div>
 		</div>
 		<div class="col-xs-6 top-bar-items top-bar-items-right text-right">Logout</div>
-	</div>	
+	</div>
 
-<div class ="container">
-<div class="stack">
-   <img src="../../assets/images/pic.jpg" width="500" height="380">
-</div>
-<div class="row">
-    <div class="col-lg-4 col-lg-offset-4">
-        <div class="input-group">
-            <input type="text" class="form-control" /> 
-            <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Go!</button>
-            </span>
-        </div><!-- /input-group -->
-    </div><!-- /.col-lg-4 -->
-</div><!-- /.row -->
+	<div class = "level-number">Level 1</div>	
 
-	
-</div>
+	<div class ="container">
+		<div class="stack">
+			<img id = "photostack" src="../../assets/images/pic.jpg" width="500" height="380">
+		</div>
+		<div class="row">
+			<div class="col-lg-4 col-lg-offset-4">
+				<div class="input-group">
+					<input type="text" class="form-control answer-bar" /> 
+					<span class="input-group-btn">
+						<button class="btn btn-default go-button" type="button">Go</button>
+					</span>
+				</div><!-- /input-group -->
+			</div><!-- /.col-lg-4 -->
+		</div><!-- /.row -->
+
+
+	</div>
