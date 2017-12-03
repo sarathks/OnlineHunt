@@ -6,6 +6,21 @@
   overflow-x: hidden;
 }
 
+.level-number{
+  color: white;
+  font-size: 25px;
+  text-align: center;
+  margin-top: 2%;
+  margin-left: 33%;
+  margin-right: 33%;
+  font-weight: 600;
+  font-family: 'Pacifico', cursive;
+  border: 2px solid #ffffff;
+  border-radius: 35px;
+  background:#2c2b30;
+  padding: 5px;
+}
+
 .top-bar{
 	height: 60px;
 	cursor: pointer;
