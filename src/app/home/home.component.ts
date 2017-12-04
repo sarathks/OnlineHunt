@@ -57,9 +57,9 @@ export class HomeComponent implements OnInit {
 		this.wrongAnswer = false;
 		this.questionPage = false;
 		$('body').css("position","relative");
-		// setTimeout(function(){
-		// 	location.reload();
-		// },5000);
+		setTimeout(function(){
+			location.reload();
+		},5000);
 	}
 
    }
