@@ -1,4 +1,4 @@
-<div *ngIf="false" class ="home-container">
+<div *ngIf="questionPage" class ="home-container">
 	<div class = "row top-bar">
 		<div class="col-xs-6 top-bar-items top-bar-items-left">
 			<div class = "col-xs-4 col-md-2" routerLink="/home">Home</div>
@@ -17,9 +17,9 @@
 		<div class="row">
 			<div class="col-lg-4 col-lg-offset-4">
 				<div class="input-group">
-					<input type="text" class="form-control answer-bar" /> 
+					<input type="text" [(ngModel)]="answerSubmitted" class="form-control answer-bar" /> 
 					<span class="input-group-btn">
-						<button class="btn btn-default go-button" type="button">Go</button>
+						<button class="btn btn-default go-button" type="button" (click) = "answerSubmit()">Go</button>
 					</span>
 				</div><!-- /input-group -->
 			</div><!-- /.col-lg-4 -->
@@ -28,34 +28,21 @@
 </div>
 
 
-<div class="success-page">
+<div class="success-page" *ngIf="rightAnswer" >
 <div class='wrap'>
-
-  <div class='firework'>
-  	<div *ngFor="let arr of myArr" class="c"></div>
+  <div *ngFor="let arr of dotArray" class='firework'>
+  	<div *ngFor="let arr of dotArray" class="c"></div>
   </div>
-  <div class='firework'>
-  	<div *ngFor="let arr of myArr" class="c"></div>
-  </div>
-  <div class='firework'>
-  	<div *ngFor="let arr of myArr" class="c"></div>
-  </div>
-  <div class='firework'>
-  	<div *ngFor="let arr of myArr" class="c"></div>
-  </div>
-  <div class='firework'>
-  	<div *ngFor="let arr of myArr" class="c"></div>
-  </div>
-  <div class='firework'>
-  	<div *ngFor="let arr of myArr" class="c"></div>
-  </div>
-  <div class='firework'>
-  	<div *ngFor="let arr of myArr" class="c"></div>
-  </div>
-  <div class='firework'>
-  	<div *ngFor="let arr of myArr" class="c"></div>
-  </div>
+  <div class = "success-text">Oh!! You cracked it..<img class= "success-smiley" src="../../assets/images/cracker.png"></div>
 
 </div>
+
+</div>
+
+
+
+<div class="wrong-page" *ngIf="wrongAnswer" >
+  <div class = "wrong-text"><img class= "wrong-smiley" src="../../assets/images/sad.png"> It was wrong, try again</div>
+
 
 </div>
