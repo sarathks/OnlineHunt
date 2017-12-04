@@ -31,29 +31,60 @@
 }
 
 .top-bar-items-right{
-  width:42% !important;
+  width:46% !important;
     cursor: pointer;
 }
 
 .top-bar-items-left div {
   cursor: pointer;
 }
-table {
-   background-color: rgba(0, 0, 0,0.7);
-   border: 4px solid white;
 
+table th{
+    padding: 9px 0 9px 5px;
+    font-size: 15px;
+    text-align: center;
+    width: auto;
 }
-thead {
+
+table thead{
+    color: white;
     font-size: 16px;
-    height: 10px;
+    font-family: 'Comfortaa', cursive;
+    display: table; 
+    width: 100%;
+    table-layout: fixed;
 }
-th{
-  color: white;
-  height: 40px;
+
+table tbody{
+   overflow-y: auto;
+   display: block;
+   color: white;
+    font-size: 15px;
+    font-family: 'Comfortaa', cursive;
+   max-height: 75vh;
+   width: 100%;
 }
-td {
-  color: white;
-  font-size: 15px;
-  height: 30px;
-  border-top: 1px solid #ddd;
+
+tbody tr {
+   display: table;
+   width: 100%;
+   table-layout: fixed;
+}
+
+
+
+table td {
+    color: white;
+    text-align: center;
+    padding: 5px 0 5px 5px;
+}
+::-webkit-scrollbar { 
+    display: block; 
+}
+.table-container {
+  border: 3px solid #ffffff;
+  border-radius: 10px;
+  margin-top: 2%;
+  background-color: #050505;
+  opacity: .9;
 }

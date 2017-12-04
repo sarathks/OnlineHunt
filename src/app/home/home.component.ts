@@ -9,9 +9,14 @@ declare var $:any;
 })
 export class HomeComponent implements OnInit {
 
+    public myArr:any = [];
+
 	constructor() { }
 
 	ngOnInit() {
+		for(var i=0;i<20;i++){
+			this.myArr.push(i);
+		}
 		if(window.innerWidth<768) {
 			$('body').css("position","fixed"); // For setting the background static
 
@@ -24,4 +29,5 @@ export class HomeComponent implements OnInit {
 			//END..........
 		}
 	}
+
 }
