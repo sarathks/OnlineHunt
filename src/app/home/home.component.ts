@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { DataService } from '../data.service';
 
 declare var $:any;
 
@@ -19,7 +20,7 @@ export class HomeComponent implements OnInit {
 	public answerSubmitted:any = "";
 
 
-	constructor() { }
+	constructor(private DataService:DataService) { }
 
 	ngOnInit() {
 		for(var i=0;i<30;i++){
@@ -42,27 +43,72 @@ export class HomeComponent implements OnInit {
 
 
    answerSubmit(): any {
-   	if(this.answerSubmitted == 'w'){
-	   	this.rightAnswer = false;
-		this.wrongAnswer = true;
-		this.questionPage = false;
-		$('body').css("position","relative");
-		setTimeout(function(){
-			location.reload();
-		},5000);
-	}
+   		var params = {
+   "parentId":(JSON.parse(localStorage.loggedInParent)).parentId,
+   "sessionId":(JSON.parse(localStorage.loggedInParent)).sessionId
+ };
 
-	if(this.answerSubmitted == 'r'){
-	   	this.rightAnswer = true;
+ this.DataService.fetchData(params,"/pick_up/get_student_list").
+ subscribe(
+   (data) => {
+     if(data.json().resultCode ==0 ){
+       this.rightAnswer = true;
 		this.wrongAnswer = false;
 		this.questionPage = false;
 		$('body').css("position","relative");
 		setTimeout(function(){
 			location.reload();
-		},5000);
-	}
+		},3000);
+     }
+     else {
+       this.rightAnswer = false;
+		this.wrongAnswer = true;
+		this.questionPage = false;
+		$('body').css("position","relative");
+		setTimeout(function(){
+			location.reload();
+		},3000);
+     }
+   },
+   function(err){
+   	this.rightAnswer = false;
+		this.wrongAnswer = true;
+		this.questionPage = false;
+		$('body').css("position","relative");
+		setTimeout(function(){
+			location.reload();
+		},3000);
+     
+   }
+   );
+ //   	if(this.answerSubmitted == 'w'){
+	//    	this.rightAnswer = false;
+	// 	this.wrongAnswer = true;
+	// 	this.questionPage = false;
+	// 	$('body').css("position","relative");
+	// 	setTimeout(function(){
+	// 		location.reload();
+	// 	},3000);
+	// }
+
+	// if(this.answerSubmitted == 'r'){
+	//    	this.rightAnswer = true;
+	// 	this.wrongAnswer = false;
+	// 	this.questionPage = false;
+	// 	$('body').css("position","relative");
+	// 	setTimeout(function(){
+	// 		location.reload();
+	// 	},3000);
+	// }
 
    }
+
+    keyDownFunction(event) {
+  if(event.keyCode == 13) {
+   this.answerSubmit();
+   
+  }
+}
 
 
 }

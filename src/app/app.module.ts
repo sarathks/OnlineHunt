@@ -7,7 +7,8 @@ import { RouterModule, Routes} from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LeaderBoardComponent } from './leader-board/leader-board.component';
 import { RulesComponent } from './rules/rules.component';
-
+import { DataService } from './data.service';
+import { HttpModule } from '@angular/http';
 const appRoutes:Routes = [
 {
   path:'',
@@ -37,9 +38,9 @@ const appRoutes:Routes = [
   ],
   imports: [
     BrowserModule,RouterModule.forRoot(appRoutes),
-    FormsModule,
+    FormsModule,HttpModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

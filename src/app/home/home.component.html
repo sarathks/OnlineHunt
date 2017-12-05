@@ -5,7 +5,7 @@
 			<div class = "col-xs-4 col-md-2" routerLink="/rules">Rules</div>
 			<div class = "col-xs-4 col-md-2" routerLink="/leader-board">Leaderboard</div>
 		</div>
-		<div class="col-xs-6 top-bar-items top-bar-items-right text-right">Logout</div>
+		<div class="col-xs-6 top-bar-items top-bar-items-right text-right" routerLink="/">Logout</div>
 	</div>
 
 	<div class = "level-number">Level 1</div>	
@@ -17,7 +17,7 @@
 		<div class="row">
 			<div class="col-lg-4 col-lg-offset-4">
 				<div class="input-group">
-					<input type="text" [(ngModel)]="answerSubmitted" class="form-control answer-bar" /> 
+					<input (keydown)="keyDownFunction($event)"  type="text" [(ngModel)]="answerSubmitted" class="form-control answer-bar" /> 
 					<span class="input-group-btn">
 						<button class="btn btn-default go-button" type="button" (click) = "answerSubmit()">Go</button>
 					</span>
