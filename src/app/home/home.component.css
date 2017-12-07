@@ -1,5 +1,5 @@
 .home-container {
-  background-image: url(../../assets/images/bg_image.jpg);
+  background-image: url(../../assets/images/moon.jpg);
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
@@ -8,17 +8,19 @@
 
 .level-number{
   color: white;
-  font-size: 25px;
+  font-size: 45px;
   text-align: center;
-  margin-top: 2%;
+  /*margin-top: 2%;*/
   margin-left: 33%;
   margin-right: 33%;
   font-weight: 600;
-  font-family: 'Pacifico', cursive;
-  border: 2px solid #ffffff;
+  text-shadow: 4px 4px #030303;
+  font-family: 'caribbean';
+  /*font-family: 'Berkshire Swash', cursive;*/
+  /*border: 2px solid #ffffff;
   border-radius: 35px;
-  background:#2c2b30;
-  padding: 5px;
+  background:#2c2b30;*/
+  /*padding: 5px;*/
 }
 
 .top-bar{
@@ -27,19 +29,28 @@
 
 }
 
-.top-bar:hover { 
+/*.top-bar:hover { 
   background-color:#2b2b2f;
   -webkit-transition: background-color 400ms linear;
   -ms-transition: background-color 400ms linear;
   transition: background-color 400ms linear;
-  border: 2px solid #4f4949;
+}
+*/
+.top-bar-items-left div:hover{
+  color: #d5a3fc;
+}
+
+.top-bar-items-right:hover{
+  color: #d5a3fc;
 }
 
 .top-bar-items{
 	margin-top: 20px;
 	color:#ffffff;
 	font-size: 17px;
-	font-family: 'Pacifico', cursive;
+	/*font-family: 'Pacifico', cursive;*/
+  font-family: 'Berkshire Swash', cursive;
+
 }
 
 .top-bar-items-left{
@@ -104,8 +115,8 @@ img {
   padding-left: 35px;
   background: #2c2b30;
   color: white;
-  font-weight: 600;
   font-size: 14px;
+  font-family: 'Berkshire Swash', cursive;
 }
 
 .answer-bar{
@@ -113,7 +124,6 @@ img {
   font-weight: 800;
   font-size: 16px;
   font-family: "Roboto", sans-serif;
-
 }
 
 .success-page {
