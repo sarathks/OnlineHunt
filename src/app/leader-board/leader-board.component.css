@@ -1,5 +1,5 @@
 .home-container {
-  background-image: url(../../assets/images/bg_image.jpg);
+  background-image: url(../../assets/images/moon.jpg);
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
@@ -11,14 +11,14 @@
     
 }
 
-.top-bar:hover { 
+/*.top-bar:hover { 
     background-color:#2b2b2f;
     -webkit-transition: background-color 400ms linear;
     -ms-transition: background-color 400ms linear;
     transition: background-color 400ms linear;
     border: 2px solid #4f4949;
 }
-
+*/
 .top-bar-items{
   margin-top: 20px;
   color:#ffffff;
@@ -38,6 +38,26 @@
 .top-bar-items-left div {
   cursor: pointer;
 }
+
+
+
+.top-bar-items-left div:hover{
+  color: #d5a3fc;
+}
+
+.top-bar-items-right:hover{
+  color: #d5a3fc;
+}
+
+.top-bar-items{
+  margin-top: 20px;
+  color:#ffffff;
+  font-size: 17px;
+  /*font-family: 'Pacifico', cursive;*/
+  font-family: 'Berkshire Swash', cursive;
+
+}
+
 
 table th{
     padding: 9px 0 9px 5px;
