@@ -1,0 +1,53 @@
+.loading-indicator {
+position: fixed;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+background: rgba(0,0,0,0.68);
+z-index: 1060;
+-webkit-box-pack: center;
+-webkit-justify-content: center;
+justify-content: center;
+-webkit-box-align: center;
+-webkit-align-items: center;
+align-items: center;
+-webkit-align-content: center;
+align-content: center;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -moz-flex;
+display: -webkit-flex;
+display: flex;
+}
+
+
+body {
+  background: $base;
+  text-align: center;
+}
+
+svg {
+  margin: auto;
+  display: block;
+  width: 50%;
+}
+
+
+
+.clip {
+  animation: slide 3s infinite;
+}
+
+@keyframes slide {
+  from {
+    transform: translateY(135px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  to {
+    transform: translateY(135px);
+  }
+}
