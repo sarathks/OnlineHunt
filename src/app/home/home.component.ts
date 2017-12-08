@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
 	public wrongAnswer:any = false;
 	public questionPage:any = true;
 	public answerSubmitted:any = "";
+    public loaderInHome:any = false;
 
 
 	constructor(private DataService:DataService) { }
@@ -43,6 +44,7 @@ export class HomeComponent implements OnInit {
 
 
    answerSubmit(): any {
+   	this.loaderInHome = true;
    		var params = {
    "parentId":(JSON.parse(localStorage.loggedInParent)).parentId,
    "sessionId":(JSON.parse(localStorage.loggedInParent)).sessionId
@@ -51,6 +53,7 @@ export class HomeComponent implements OnInit {
  this.DataService.fetchData(params,"/pick_up/get_student_list").
  subscribe(
    (data) => {
+   	this.loaderInHome = false;
      if(data.json().resultCode ==0 ){
        this.rightAnswer = true;
 		this.wrongAnswer = false;
@@ -71,6 +74,7 @@ export class HomeComponent implements OnInit {
      }
    },
    function(err){
+   	this.loaderInAttendance = false;
    	this.rightAnswer = false;
 		this.wrongAnswer = true;
 		this.questionPage = false;

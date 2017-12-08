@@ -3,17 +3,34 @@
   Quest
 </div>
 
+<div class="login">
+  <div class="login-form">
+   <div class = "login-input-container">
+   <input class = "login-input" type="text" placeholder="Username"/><br>
+   </div>
+    <div class = "login-input-container" >
+       <input class = "login-input" type="password" placeholder="Password"/>
+    </div>
+    <br>
+    <div class = "submit-bomb" >
+    <input type="button" value="Login" class="login-button"/>
+    </div>
+    <br>
+    <a class="sign-up">Sign Up!</a>
+    <br>
+  </div>
+</div>
 
-<div class="login-page">
+<!-- <div class="login-page">
   <div class="form login-form-wrapper">
     <form class="login-form">
-      <input type="text" placeholder="username"/>
-      <input type="password" placeholder="password"/>
+      <input type="text" name ="username" [(ngModel)]="username" placeholder="username"/>
+      <input type="password" name = "pwd" [(ngModel)]="pwd" placeholder="password"/>
       <button (click)="login()" >login</button>
       <p class="message">Not registered? <a (click)="register()" >Create an account</a></p>
     </form>
   </div>
-</div>
+</div> -->
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">

@@ -9,6 +9,7 @@ import { LeaderBoardComponent } from './leader-board/leader-board.component';
 import { RulesComponent } from './rules/rules.component';
 import { DataService } from './data.service';
 import { HttpModule } from '@angular/http';
+import { LoadingIndicatorComponent } from './loading-indicator/loading-indicator.component';
 const appRoutes:Routes = [
 {
   path:'',
@@ -34,7 +35,8 @@ const appRoutes:Routes = [
     LoginComponent,
     HomeComponent,
     LeaderBoardComponent,
-    RulesComponent
+    RulesComponent,
+    LoadingIndicatorComponent
   ],
   imports: [
     BrowserModule,RouterModule.forRoot(appRoutes),
