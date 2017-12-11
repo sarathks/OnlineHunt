@@ -10,6 +10,7 @@ import { RulesComponent } from './rules/rules.component';
 import { DataService } from './data.service';
 import { HttpModule } from '@angular/http';
 import { LoadingIndicatorComponent } from './loading-indicator/loading-indicator.component';
+import { ModalComponent } from './modal/modal.component';
 const appRoutes:Routes = [
 {
   path:'',
@@ -36,7 +37,8 @@ const appRoutes:Routes = [
     HomeComponent,
     LeaderBoardComponent,
     RulesComponent,
-    LoadingIndicatorComponent
+    LoadingIndicatorComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,RouterModule.forRoot(appRoutes),

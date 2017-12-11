@@ -6,18 +6,18 @@
   text-align: -webkit-center;
   text-align: center;
   color: #B8753A;
-font-family: 'IM Fell English', serif;
+  font-family: 'IM Fell English', serif;
 /*  text-shadow: 4px 4px #ffffff;
 */}
 
 .login-container  {
-   background-image: url(../../assets/images/login.png);
-   background-size:cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100vh;
-  color: #dddddd;
-  font-family: "Roboto", sans-serif;
+ background-image: url(../../assets/images/login.png);
+ background-size:cover;
+ background-repeat: no-repeat;
+ background-position: center;
+ height: 100vh;
+ color:#582900;
+ font-family: "Roboto", sans-serif;
 
 }
 .login-page {
@@ -27,10 +27,6 @@ font-family: 'IM Fell English', serif;
 
 }
 
-.modal-title{
-  margin-top:10px;
-  text-align: center;
-}
 body {
   background: #76b852; /* fallback for old browsers */
   background: -webkit-linear-gradient(right, #76b852, #8DC26F);
@@ -44,22 +40,22 @@ body {
 
 /* Set a style for all buttons */
 button {
-    background-color: #2b2b2f;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
+  background-color: #b87b31;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
 }
 
 .register-close{
-    color: white;
-    margin-top:-7px;
-    padding:0 !important;
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-    opacity: 0.7;
+  color: white;
+  margin-top:-7px;
+  padding:0 !important;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  opacity: 0.7;
 }
 
 .register-submit-button{
@@ -71,15 +67,16 @@ button {
   padding:13px 40px 13px 40px;
 }
 
-.modal-header{
-  border:none;
-}
 
 .modal-content{
   width: 85%;
   z-index: 1;
-  background:#18181b;
+  background:#e2d59e;
   margin: 0 auto;
+}
+.modal-content p {
+  color: #582900;
+  font-size: 15px;
 }
 
 .modal-footer{
@@ -91,23 +88,23 @@ button {
 input[type=text], input[type=password]{
   margin-top: 1px;
   margin-bottom: 7px;
-      color: #582900 !important;
-font-size: 15px;
+  color: #582900 !important;
+  font-size: 15px;
 }
 
 
 /*media query common for all PHONE not ipad or tablets - START*/
 @media screen and  (max-width:758px){
-.login-form-wrapper{
+  .login-form-wrapper{
     width: 80%;
     margin-top: 20%;
     height: 100%;
   }
-.login-container{
-  height: 100%;
-  min-height:100vh;
-}
-    
+  .login-container{
+    height: 100%;
+    min-height:100vh;
+  }
+  
 }
 
 /*media query common for all PHONE not ipad or tablets - END*/
@@ -125,8 +122,8 @@ font-size: 15px;
 .login-input {
   background: transparent;
   border: none;
-      text-align: center;
-font-weight: 600;
+  text-align: center;
+  font-weight: 600;
 }
 
 .login-input-container {
@@ -140,7 +137,7 @@ font-weight: 600;
 
 .submit-bomb {
   background-image: url(../../assets/images/submit-bomb.png);
-   background-repeat: no-repeat;
+  background-repeat: no-repeat;
   background-position: center;
   margin: auto;
   width: 150px;
@@ -148,10 +145,11 @@ font-weight: 600;
   cursor: pointer;
 }
 .submit-bomb p {
-      padding-top: 16%;
-    padding-right: 30%;
-    font-family: 'Spectral SC', serif;
-    font-size: 33px;
+  padding-top: 16%;
+  padding-right: 30%;
+  font-family: 'Spectral SC', serif;
+  font-size: 33px;
+  color: #ddd;
 
 }
 .login-form {
@@ -182,8 +180,8 @@ font-weight: 600;
   font-size: 16px;
   cursor:pointer;
   text-decoration:underline;
-   font-family: 'Spectral SC', serif;
-     text-transform: lowercase;
+  font-family: 'Spectral SC', serif;
+  text-transform: lowercase;
 
 }
 
@@ -217,5 +215,30 @@ font-weight: 600;
     margin-bottom:10px;
   }
 }
-
-
+.close {
+  display: block;
+  height: 30px;
+  width: 24px;
+  
+}
+.modal-header {
+  border-bottom: none;
+  text-align: center;
+}
+.modal-title {
+  color: #582900;
+  font-weight: 600;
+}
+.modal-content {
+  border-radius: 10px;
+  min-height: 130px;
+}
+.modal-body {
+  padding: 15px 80px;
+}
+.modal-footer {
+  border-top: none;
+  text-align: center;
+  padding-bottom: 20px;
+  
+}

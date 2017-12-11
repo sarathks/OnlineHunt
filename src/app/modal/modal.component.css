@@ -1,0 +1,25 @@
+
+.modal-content {
+	background: #e2d59e;
+}
+button {
+    background-color: #b87b31;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+}
+.modal-header {
+	border : none;
+	color: #582900;
+	font-weight: 600;
+}
+.modal-content p {
+  color: #582900;
+  font-size: 15px;
+}
+.modal-footer {
+  border:none;
+  padding: 10px;
+}

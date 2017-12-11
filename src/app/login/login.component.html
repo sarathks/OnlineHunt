@@ -1,59 +1,111 @@
 <div class = "login-container">
-<div class = "event-name">
-  Quest
-</div>
+  <div class = "event-name">
+    Quest
+  </div>
 
-<div class="login">
-  <div class="login-form">
-   <div class = "login-input-container">
-   <input class = "login-input" type="text" placeholder="Username"/><br>
-   </div>
-    <div class = "login-input-container" >
-       <input class = "login-input" type="password" placeholder="Password"/>
-    </div>
-<a class="new-user" (click)="register()" >sign up!</a>    
-    <div class = "submit-bomb" >
-    <p (click)="login()">go</p>
+  <div class="login">
+    <div class="login-form">
+     <div class = "login-input-container">
+       <input class = "login-input" type="text"  name ="username" [(ngModel)]="username"  placeholder="Username"/><br>
+     </div>
+     <div class = "login-input-container" >
+       <input class = "login-input" type="password" name = "pwd" [(ngModel)]="pwd" placeholder="Password"/>
+     </div>
+     <a class="new-user" (click)="register()" >sign up!</a>    
+     <div class = "submit-bomb" >
+      <p (click)="login()">go</p>
     </div>
 
   </div>
 </div>
 
-<!-- <div class="login-page">
-  <div class="form login-form-wrapper">
-    <form class="login-form">
-      <input type="text" name ="username" [(ngModel)]="username" placeholder="username"/>
-      <input type="password" name = "pwd" [(ngModel)]="pwd" placeholder="password"/>
-      <button (click)="login()" >login</button>
-      <p class="message">Not registered? <a (click)="register()" >Create an account</a></p>
-    </form>
-  </div>
-</div> -->
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close register-close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">REGISTER</h4>
-      </div>
-      <div class="container">
-      <label><b>First Name</b></label>
-      <input type="text" placeholder="Enter First name" name="name" [(ngModel)]="fname" required>
-      <label><b>Last Name</b></label>
-      <input type="text" placeholder="Enter Last name" name="name" [(ngModel)]="lname" required>
-      <label><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" [(ngModel)]="email" required>
-      <label><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" [(ngModel)]="password" required>
-    </div>
-      <div class="modal-footer">
-        <button type="button " class="signupbtn register-submit-button" data-dismiss="modal" (click) = "createNewUser()" >CREATE</button>
+<div id = "registerModal" class="modal fade"
+tabindex="-1"
+role="dialog">
+<div class="modal-dialog"
+role="document">
+<div class="modal-content forgot-password-modal"
+ng-if="cwModalCtrl.type=='password'">
+<div class="modal-header">
+  <button type="button" class="close register-close" data-dismiss="modal">&times;</button>
+  <h4 class="modal-title">REGISTER</h4>
+</div>
+<form name="form">
+  <div class="modal-body">
+    <div>
+      <p> First name </p>
+      <div class="form-group">
+        <input name="emailId"
+        ng-model="cwModalCtrl.emailId"
+        type="email"
+        placeholder="Email"
+        class="form-control">
+        <span class="errorMessage"
+        *ngIf="false">Invalid email address</span>
       </div>
     </div>
-
+    <div>
+      <p> Last Name </p>
+      <div class="form-group">
+        <input name="emailId"
+        ng-model="cwModalCtrl.emailId"
+        type="email"
+        placeholder="Email"
+        class="form-control">
+        <span class="errorMessage"
+        *ngIf="false">Invalid email address</span>
+      </div>
+    </div>
+    <div>
+      <p> Email </p>
+      <div class="form-group">
+        <input name="emailId"
+        ng-model="cwModalCtrl.emailId"
+        type="email"
+        placeholder="Email"
+        class="form-control">
+        <span class="errorMessage"
+        *ngIf="false">Invalid email address</span>
+      </div>
+    </div>
+    <div>
+      <p> Password </p>
+      <div class="form-group">
+        <input name="emailId"
+        ng-model="cwModalCtrl.emailId"
+        type="password"
+        placeholder="Email"
+        class="form-control">
+        <span class="errorMessage"
+        *ngIf="false">Invalid email address</span>
+      </div>
+    </div>
+    <div>
+      <p> Confirm Password </p>
+      <div class="form-group">
+        <input name="emailId"
+        ng-model="cwModalCtrl.emailId"
+        type="password"
+        placeholder="Email"
+        class="form-control">
+        <span class="errorMessage"
+        *ngIf="false">Invalid email address</span>
+      </div>
+    </div>
   </div>
+  <div class="modal-footer">
+
+    <div ng-if="cwModalCtrl.forgotPasswordResponseMsg.length">
+      <button type="button"
+      class="btn cw-button cw-button-grey"
+      data-dismiss="modal">SignUp</button>
+    </div>
+  </div>
+
+</form>
+
 </div>
 </div>
+</div>
+</div>
+<app-modal [title]="modalTitle"></app-modal>

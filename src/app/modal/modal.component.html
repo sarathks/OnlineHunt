@@ -1,0 +1,21 @@
+  <!-- Modal -->
+  <div class="modal fade" id="operationSuccess" role="dialog">
+  	<div class="modal-dialog modal-width">
+
+  		<!-- Modal content-->
+  		<div class="modal-content">
+  			<div class="modal-header modal-top">
+  				<button type="button" class="close" data-dismiss="modal">&times;</button>
+  				<h4 class="modal-title text-center">{{title}}</h4>
+  			</div>
+  			<div class="modal-body text-center">
+  				<p class="sucess-text" [innerHTML] = "getSucessString()"></p>
+  			</div>
+  			<div class="modal-footer modal-bottom">
+  				<div class="text-center">
+  					<button class="btn cancelButton buttonsInKK " type="button" data-dismiss="modal">CANCEL</button>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+  </div>
