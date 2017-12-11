@@ -8,9 +8,11 @@
      <div class = "login-input-container">
        <input class = "login-input" type="text"  name ="username" [(ngModel)]="username"  placeholder="Username"/><br>
      </div>
+     <div class = "credentialErrors">Username error</div>
      <div class = "login-input-container" >
        <input class = "login-input" type="password" name = "pwd" [(ngModel)]="pwd" placeholder="Password"/>
      </div>
+     <div class = "credentialErrors">Username error</div>
      <a class="new-user" (click)="register()" >sign up!</a>    
      <div class = "submit-bomb" >
       <p (click)="login()">go</p>

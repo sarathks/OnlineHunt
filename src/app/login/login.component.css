@@ -242,3 +242,12 @@ input[type=text], input[type=password]{
   padding-bottom: 20px;
   
 }
+
+.credentialErrors{
+    width: 60%;
+    margin: auto;
+    margin-bottom: 10px;
+    color:red;
+    text-align: left;
+    padding-left: 10px;
+}

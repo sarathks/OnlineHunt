@@ -21,6 +21,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
+  
+
+  
   login() {
     const pointer = this;
     console.log(this.username,this.pwd)
