@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-leader-board',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeaderBoardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router, private DataService:DataService) { }
 
   ngOnInit() {
+  if(this.DataService.getUserLoggedIn()) {
+  console.log("Authenticated");
+  }
+  else {
+  this.router.navigate([''])
+  }
   }
 
 }

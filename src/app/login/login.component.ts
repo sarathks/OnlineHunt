@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   public username:any = "";
   public pwd:any = "";
   public modalTitle:any;
+  public loginCredentialError = false;
   constructor(private router:Router,private DataService:DataService) { }
 
   ngOnInit() {
@@ -26,32 +27,27 @@ export class LoginComponent implements OnInit {
   
   login() {
     const pointer = this;
-    console.log(this.username,this.pwd)
     var params = {
      "emailId":this.username,
      "password": this.pwd
    };
-
    this.DataService.fetchData(params,"/users/access_token").
    subscribe(
      (data) => {
        if(data.json().code ==0 ){
-        pointer.modalTitle = "SUCCESS"
-        localStorage.message = data.json().message;
-        $("#operationSuccess").modal("show");
+        this.DataService.setUserLoggedIn();
         this.router.navigate(['home'])
       }
       else {
-        pointer.modalTitle = "ERROR"
-        localStorage.message = data.json().message;
-        $("#operationSuccess").modal("show");
+        pointer.loginCredentialError = true;
       }
     },
     function(err){
       pointer.modalTitle = "ERROR";
+      pointer.DataService.setUserLoggedIn();
+
       localStorage.message = "Internet failure Or Server error occured";
       $("#operationSuccess").modal("show");
-
     }
     );
  }
@@ -60,7 +56,6 @@ export class LoginComponent implements OnInit {
    $("#registerModal").modal("show");
  }
  createNewUser(){
-  console.log(this.fname,this.lname,this.email,this.password);
   var params = {
    "firstName":this.fname,
    "lastName":this.lname,

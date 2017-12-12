@@ -8,11 +8,10 @@
      <div class = "login-input-container">
        <input class = "login-input" type="text"  name ="username" [(ngModel)]="username"  placeholder="Username"/><br>
      </div>
-     <div class = "credentialErrors">Username error</div>
      <div class = "login-input-container" >
        <input class = "login-input" type="password" name = "pwd" [(ngModel)]="pwd" placeholder="Password"/>
      </div>
-     <div class = "credentialErrors">Username error</div>
+     <div  *ngIf= "loginCredentialError" class = "credentialErrors">Invalid Username or Password !!!</div>
      <a class="new-user" (click)="register()" >sign up!</a>    
      <div class = "submit-bomb" >
       <p (click)="login()">go</p>
@@ -38,7 +37,7 @@ ng-if="cwModalCtrl.type=='password'">
       <p> First name </p>
       <div class="form-group">
         <input name="emailId"
-        ng-model="cwModalCtrl.emailId"
+         [(ngModel)]="fname"
         type="email"
         placeholder="Email"
         class="form-control">
@@ -50,7 +49,7 @@ ng-if="cwModalCtrl.type=='password'">
       <p> Last Name </p>
       <div class="form-group">
         <input name="emailId"
-        ng-model="cwModalCtrl.emailId"
+         [(ngModel)]="lname"
         type="email"
         placeholder="Email"
         class="form-control">
@@ -62,7 +61,7 @@ ng-if="cwModalCtrl.type=='password'">
       <p> Email </p>
       <div class="form-group">
         <input name="emailId"
-        ng-model="cwModalCtrl.emailId"
+        [(ngModel)]="email"
         type="email"
         placeholder="Email"
         class="form-control">
@@ -74,19 +73,7 @@ ng-if="cwModalCtrl.type=='password'">
       <p> Password </p>
       <div class="form-group">
         <input name="emailId"
-        ng-model="cwModalCtrl.emailId"
-        type="password"
-        placeholder="Email"
-        class="form-control">
-        <span class="errorMessage"
-        *ngIf="false">Invalid email address</span>
-      </div>
-    </div>
-    <div>
-      <p> Confirm Password </p>
-      <div class="form-group">
-        <input name="emailId"
-        ng-model="cwModalCtrl.emailId"
+        [(ngModel)]="password"
         type="password"
         placeholder="Email"
         class="form-control">
@@ -97,9 +84,10 @@ ng-if="cwModalCtrl.type=='password'">
   </div>
   <div class="modal-footer">
 
-    <div ng-if="cwModalCtrl.forgotPasswordResponseMsg.length">
+    <div>
       <button type="button"
       class="btn cw-button cw-button-grey"
+      (click) = "createNewUser()"
       data-dismiss="modal">SignUp</button>
     </div>
   </div>

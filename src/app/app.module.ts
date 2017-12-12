@@ -11,6 +11,7 @@ import { DataService } from './data.service';
 import { HttpModule } from '@angular/http';
 import { LoadingIndicatorComponent } from './loading-indicator/loading-indicator.component';
 import { ModalComponent } from './modal/modal.component';
+
 const appRoutes:Routes = [
 {
   path:'',
