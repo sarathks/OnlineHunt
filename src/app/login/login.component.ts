@@ -17,6 +17,9 @@ export class LoginComponent implements OnInit {
   public username:any = "";
   public pwd:any = "";
   public modalTitle:any;
+  public emailErorr:any;
+  public passwordError:any;
+  public nameError:any;
   constructor(private router:Router,private DataService:DataService) { }
 
   ngOnInit() {
@@ -56,11 +59,13 @@ export class LoginComponent implements OnInit {
     );
  }
 
+
+
  register() {
    $("#registerModal").modal("show");
  }
+
  createNewUser(){
-  console.log(this.fname,this.lname,this.email,this.password);
   var params = {
    "firstName":this.fname,
    "lastName":this.lname,
@@ -68,6 +73,11 @@ export class LoginComponent implements OnInit {
    "password": this.password
  };
 
+ var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+ this.emailErorr = re.test(this.email);
+ this.passwordError = (this.password.length<9) ? true : false;
+ this.nameError = (this.fname.length>0) ? false : true;
+ 
  this.DataService.fetchData(params,"/users").
  subscribe(
    (data) => {
@@ -80,7 +90,6 @@ export class LoginComponent implements OnInit {
   },
   function(err){
    alert("some error occured");
-
  }
  );
 
