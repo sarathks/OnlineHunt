@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
 	constructor(private router:Router, private DataService:DataService) { }
 
 	ngOnInit() {
-	if(this.DataService.getUserLoggedIn()) {
+	if(localStorage.access_token) {
 		for(var i=0;i<30;i++){
 			this.dotArray.push(i);
 		}

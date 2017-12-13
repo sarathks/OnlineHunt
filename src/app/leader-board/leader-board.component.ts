@@ -13,7 +13,7 @@ export class LeaderBoardComponent implements OnInit {
   constructor(private router:Router, private DataService:DataService) { }
 
   ngOnInit() {
-  if(this.DataService.getUserLoggedIn()) {
+  if(localStorage.access_token) {
   console.log("Authenticated");
   }
   else {
