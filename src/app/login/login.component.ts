@@ -17,7 +17,8 @@ export class LoginComponent implements OnInit {
   public username:any = "";
   public pwd:any = "";
   public modalTitle:any;
-  public emailErorr:any;
+  public loginCredentialError = false;
+public emailErorr:any;
   public passwordError:any;
   public nameError:any;
   constructor(private router:Router,private DataService:DataService) { }
@@ -29,7 +30,7 @@ export class LoginComponent implements OnInit {
   
   login() {
     const pointer = this;
-    console.log(this.username,this.pwd)
+
     var params = {
      "emailId":this.username,
      "password": this.pwd
@@ -39,22 +40,25 @@ export class LoginComponent implements OnInit {
    subscribe(
      (data) => {
        if(data.json().code ==0 ){
-        pointer.modalTitle = "SUCCESS"
-        localStorage.message = data.json().message;
-        $("#operationSuccess").modal("show");
+        this.DataService.setUserLoggedIn();
+        localStorage.access_token = data.json().Payload.access_token;
         this.router.navigate(['home'])
       }
       else {
-        pointer.modalTitle = "ERROR"
-        localStorage.message = data.json().message;
-        $("#operationSuccess").modal("show");
+        pointer.loginCredentialError = true;
       }
     },
     function(err){
-      pointer.modalTitle = "ERROR";
+      if(err.json().message)
+      {
+        pointer.loginCredentialError = true;
+      }
+      else {
+        pointer.modalTitle = "Error";
       localStorage.message = "Internet failure Or Server error occured";
       $("#operationSuccess").modal("show");
-
+      }
+      
     }
     );
  }
@@ -66,6 +70,7 @@ export class LoginComponent implements OnInit {
  }
 
  createNewUser(){
+  const pointer = this;
   var params = {
    "firstName":this.fname,
    "lastName":this.lname,
@@ -82,14 +87,29 @@ export class LoginComponent implements OnInit {
  subscribe(
    (data) => {
      if(data.json().code ==0 ){
-       alert("user created successfully");
+       pointer.modalTitle = "Success";
+      localStorage.message = data.json().message;
+      $("#operationSuccess").modal("show");
      }
      else {
-      alert(data.json().message);
+      pointer.modalTitle = "Error";
+      localStorage.message = data.json().message;
+      $("#operationSuccess").modal("show");
     }
   },
   function(err){
-   alert("some error occured");
+  if(err.json().message)
+      {
+         pointer.modalTitle = "Error";
+      localStorage.message = err.json().message;
+      $("#operationSuccess").modal("show");
+      }
+      else {
+        pointer.modalTitle = "Error";
+      localStorage.message = "Internet failure Or Server error occured";
+      $("#operationSuccess").modal("show");
+      }
+
  }
  );
 

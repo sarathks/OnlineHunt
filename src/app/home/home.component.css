@@ -1,7 +1,8 @@
 .home-container {
-  background-image: url(../../assets/images/moon.jpg);
+  background-image: url(../../assets/images/login.png);
   background-repeat: no-repeat;
   background-position: center;
+  background-size:cover;
   height: 100vh;
   overflow-x: hidden;
 }

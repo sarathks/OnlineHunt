@@ -21,9 +21,10 @@ export class HomeComponent implements OnInit {
     public loaderInHome:any = false;
 
 
-	constructor(private DataService:DataService) { }
+	constructor(private router:Router, private DataService:DataService) { }
 
 	ngOnInit() {
+	if(localStorage.access_token) {
 		for(var i=0;i<30;i++){
 			this.dotArray.push(i);
 		}
@@ -40,6 +41,11 @@ export class HomeComponent implements OnInit {
 				//END..........
 			}, 100);
 		}
+	}
+	else {
+		this.router.navigate([''])
+	}
+	
 	}
 
 
