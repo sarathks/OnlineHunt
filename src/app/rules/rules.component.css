@@ -1,7 +1,7 @@
 
 
 .home-container {
-  background-image: url(../../assets/images/moon.jpg);
+  background-image: url(../../assets/images/login.png);
   background-color: black;
   background-repeat: no-repeat;
   background-position: center;
@@ -22,12 +22,6 @@
     border: 2px solid #4f4949;
 }*/
 
-.top-bar-items{
-  margin-top: 20px;
-  color:#ffffff;
-  font-size: 17px;
-  font-family: 'Pacifico', cursive;
-}
 
 .top-bar-items-left{
   margin-left: 15px;
@@ -44,16 +38,18 @@
 
 
 .top-bar-items-left div:hover{
-  color: #d5a3fc;
+  color: #884205;
+  font-weight: 800;
 }
 
 .top-bar-items-right:hover{
-  color: #d5a3fc;
+  color: #884205;
+  font-weight: 800;
 }
 
 .top-bar-items{
   margin-top: 20px;
-  color:#ffffff;
+  color:#B8753A;;
   font-size: 17px;
   /*font-family: 'Pacifico', cursive;*/
   font-family: 'Berkshire Swash', cursive;

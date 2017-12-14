@@ -4108,10 +4108,12 @@ body {
     right: 0;
     left: auto;
     padding: 0px 10px;
+    background: #e2d59e;
   }
 .dropdown-menu  li {
         cursor: pointer;
         padding: 10px 0;
+        color: #582900;
         border-bottom: 2px solid rgba(213, 213, 213, 0.55);
   }
 }
