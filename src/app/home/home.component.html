@@ -1,14 +1,45 @@
 <div *ngIf="questionPage" class ="home-container">
-	<div class = "row top-bar">
+<!-- 	<div class = "row top-bar">
 		<div class="col-xs-6 top-bar-items top-bar-items-left">
 			<div class = "col-xs-4 col-md-2" routerLink="/home">Home</div>
 			<div class = "col-xs-4 col-md-2" routerLink="/rules">Rules</div>
 			<div class = "col-xs-4 col-md-2" routerLink="/leader-board">Leaderboard</div>
 		</div>
+		<div class = "level-number">LEVEL 12</div>	
 		<div class="col-xs-6 top-bar-items top-bar-items-right text-right" routerLink="/">Logout</div>
+	</div> -->
+
+	<div class="row">
+
+	<div class="col-xs-4 top-bar-items top-bar-items-left">
+	    <div class = "col-xs-6" routerLink="/home">Home</div>
+		<div class = "col-xs-6" routerLink="/rules">Rules</div>
+	</div>
+	<div class="col-xs-4 level-part">
+		<div class = "level-number">LEVEL 12</div>	
+	</div>
+	<div class="col-xs-4 top-bar-items top-bar-items-right">
+	    <div class = "col-xs-6" routerLink="/leader-board">Leaderboard</div>
+		<div class = "col-xs-6" routerLink="/">Logout</div>
+	</div>
+	  <div class="btn-group">
+        <div type="button"
+          class="dropdown-toggle"
+          data-toggle="dropdown">
+            <span class="line-one line"></span>
+            <span class="line-two line"></span>
+            <span class="line-three line"></span>
+            </div>
+        <ul class="dropdown-menu">
+          <li routerLink="/home">Home</li>
+          <li routerLink="/rules">Rules </li>
+          <li routerLink="/leader-board">Leaderboard </li>
+          <li routerLink="/">Logout </li>
+        </ul>
+      </div>
 	</div>
 
-	<div class = "level-number">Level 1</div>	
+
 
 	<div class ="container">
 		<div class="stack">
