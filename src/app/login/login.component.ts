@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   public pwd:any = "";
   public modalTitle:any;
   public loginCredentialError = false;
-public emailErorr:any;
+  public emailErorr:any;
   public passwordError:any;
   public nameError:any;
   constructor(private router:Router,private DataService:DataService) { }
@@ -27,7 +27,6 @@ public emailErorr:any;
   }
   
 
-  
   login() {
     const pointer = this;
 
@@ -55,8 +54,8 @@ public emailErorr:any;
       }
       else {
         pointer.modalTitle = "Error";
-      localStorage.message = "Internet failure Or Server error occured";
-      $("#operationSuccess").modal("show");
+        localStorage.message = "Internet failure Or Server error occured";
+        $("#operationSuccess").modal("show");
       }
       
     }
@@ -82,36 +81,44 @@ public emailErorr:any;
  this.emailErorr = re.test(this.email);
  this.passwordError = (this.password.length<9) ? true : false;
  this.nameError = (this.fname.length>0) ? false : true;
- 
- this.DataService.fetchData(params,"/users").
- subscribe(
-   (data) => {
-     if(data.json().code ==0 ){
-       pointer.modalTitle = "Success";
-      localStorage.message = data.json().message;
-      $("#operationSuccess").modal("show");
+ if((this.emailErorr==false) || (this.passwordError) || (this.nameError))
+ {
+
+ }
+
+ else{
+   $("#registerModal").modal("hide");
+   
+   this.DataService.fetchData(params,"/users").
+   subscribe(
+     (data) => {
+       if(data.json().code ==0 ){
+         pointer.modalTitle = "Success";
+         localStorage.message = data.json().message;
+         $("#operationSuccess").modal("show");
+       }
+       else {
+        pointer.modalTitle = "Error";
+        localStorage.message = data.json().message;
+        $("#operationSuccess").modal("show");
+      }
+    },
+    function(err){
+      if(err.json().message)
+      {
+       pointer.modalTitle = "Error";
+       localStorage.message = err.json().message;
+       $("#operationSuccess").modal("show");
      }
      else {
       pointer.modalTitle = "Error";
-      localStorage.message = data.json().message;
-      $("#operationSuccess").modal("show");
-    }
-  },
-  function(err){
-  if(err.json().message)
-      {
-         pointer.modalTitle = "Error";
-      localStorage.message = err.json().message;
-      $("#operationSuccess").modal("show");
-      }
-      else {
-        pointer.modalTitle = "Error";
       localStorage.message = "Internet failure Or Server error occured";
       $("#operationSuccess").modal("show");
-      }
+    }
 
+  }
+  );
  }
- );
 
 }
 }

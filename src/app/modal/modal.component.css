@@ -22,4 +22,31 @@ button {
 .modal-footer {
   border:none;
   padding: 10px;
+    border-top: none;
+  text-align: center;
+  padding-bottom: 20px;
+  font-family: 'Della Respira', serif;
+}
+
+
+.close {
+  display: block;
+  height: 30px;
+  width: 24px;
+  font-size: 40px;
+  background: none;
+  color: #4d1919;
+  
+}
+
+.modal-title {
+  color: #582900;
+  font-weight: 800;
+  font-family: 'Della Respira', serif;
+
+}
+
+.modal-body {
+  padding: 15px 80px;
+  font-family: 'Della Respira', serif;
 }
