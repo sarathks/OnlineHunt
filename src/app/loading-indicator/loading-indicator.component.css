@@ -28,26 +28,10 @@ body {
   text-align: center;
 }
 
-svg {
-  margin: auto;
-  display: block;
-  width: 50%;
-}
 
-
-
-.clip {
-  animation: slide 3s infinite;
-}
-
-@keyframes slide {
-  from {
-    transform: translateY(135px);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-  to {
-    transform: translateY(135px);
-  }
+svg{
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  display:inline-block;
 }

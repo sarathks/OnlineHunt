@@ -80,7 +80,7 @@ export class HomeComponent implements OnInit {
      }
    },
    function(err){
-   	this.loaderInAttendance = false;
+   	this.loaderInHome = false;
    	this.rightAnswer = false;
 		this.wrongAnswer = true;
 		this.questionPage = false;
