@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
   public emailErorr:any;
   public passwordError:any;
   public nameError:any;
+  public loaderInLogin:any = false;
   constructor(private router:Router,private DataService:DataService) { }
 
   ngOnInit() {
@@ -29,7 +30,7 @@ export class LoginComponent implements OnInit {
 
   login() {
     const pointer = this;
-
+  pointer.loaderInLogin = true;
     var params = {
      "emailId":this.username,
      "password": this.pwd
@@ -38,6 +39,7 @@ export class LoginComponent implements OnInit {
    this.DataService.fetchData(params,"/users/access_token").
    subscribe(
      (data) => {
+        pointer.loaderInLogin = false;
        if(data.json().code ==0 ){
         this.DataService.setUserLoggedIn();
         localStorage.access_token = data.json().Payload.access_token;
@@ -48,6 +50,7 @@ export class LoginComponent implements OnInit {
       }
     },
     function(err){
+        pointer.loaderInLogin = false;
       if(err.json().message)
       {
         pointer.loginCredentialError = true;

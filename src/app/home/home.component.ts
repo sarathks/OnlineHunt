@@ -18,19 +18,21 @@ export class HomeComponent implements OnInit {
 	public wrongAnswer:any = false;
 	public questionPage:any = true;
 	public answerSubmitted:any = "";
-    public loaderInHome:any = false;
+	public loaderInHome:any = false;
+	public modalTitle:any;
+	public level:any = 1;
 
 
 	constructor(private router:Router, private DataService:DataService) { }
 
 	ngOnInit() {
-	if(localStorage.access_token) {
-		for(var i=0;i<30;i++){
-			this.dotArray.push(i);
-		}
-		if(window.innerWidth<768 && this.questionPage) {
-			setTimeout(function()
-			{
+		if(localStorage.access_token) {
+			for(var i=0;i<30;i++){
+				this.dotArray.push(i);
+			}
+			if(window.innerWidth<768 && this.questionPage) {
+				setTimeout(function()
+				{
 				$('body').css("position","fixed"); // For setting the background static
 				//START--following code is to set width of photostack in home page for responsiveness
 				$('.stack').append('<style>.stack{width:'+(window.innerWidth-65)+'px !important;}</style>');
@@ -40,57 +42,64 @@ export class HomeComponent implements OnInit {
 				img.width = window.innerWidth-65;
 				//END..........
 			}, 100);
+			}
+
+			this.fetchUserDetails();
 		}
-	}
-	else {
-		this.router.navigate([''])
-	}
-	
+		else {
+			this.router.navigate([''])
+		}
+		
 	}
 
 
-   answerSubmit(): any {
-   	this.loaderInHome = true;
-   		var params = {
-   "parentId":(JSON.parse(localStorage.loggedInParent)).parentId,
-   "sessionId":(JSON.parse(localStorage.loggedInParent)).sessionId
- };
+	answerSubmit(): any {
+		const pointer = this;
+		pointer.loaderInHome = true;
+		var params = {
+			"parentId":(JSON.parse(localStorage.loggedInParent)).parentId,
+			"sessionId":(JSON.parse(localStorage.loggedInParent)).sessionId
+		};
 
- this.DataService.fetchData(params,"/pick_up/get_student_list").
- subscribe(
-   (data) => {
-   	this.loaderInHome = false;
-     if(data.json().resultCode ==0 ){
-       this.rightAnswer = true;
-		this.wrongAnswer = false;
-		this.questionPage = false;
-		$('body').css("position","relative");
-		setTimeout(function(){
-			location.reload();
-		},3000);
-     }
-     else {
-       this.rightAnswer = false;
-		this.wrongAnswer = true;
-		this.questionPage = false;
-		$('body').css("position","relative");
-		setTimeout(function(){
-			location.reload();
-		},3000);
-     }
-   },
-   function(err){
-   	this.loaderInHome = false;
-   	this.rightAnswer = false;
-		this.wrongAnswer = true;
-		this.questionPage = false;
-		$('body').css("position","relative");
-		setTimeout(function(){
-			location.reload();
-		},3000);
-     
-   }
-   );
+		pointer.DataService.fetchData(params,"/pick_up/get_student_list").
+		subscribe(
+			(data) => {
+				pointer.loaderInHome = false;
+				if(data.json().resultCode ==0 ){
+					this.rightAnswer = true;
+					this.wrongAnswer = false;
+					this.questionPage = false;
+					$('body').css("position","relative");
+					setTimeout(function(){
+						location.reload();
+					},3000);
+				}
+				else {
+					this.rightAnswer = false;
+					this.wrongAnswer = true;
+					this.questionPage = false;
+					$('body').css("position","relative");
+					setTimeout(function(){
+						location.reload();
+					},3000);
+				}
+			},
+			function(err){
+				pointer.loaderInHome = false;
+				if(err.json().message)
+				{
+					pointer.modalTitle = "Error";
+					localStorage.message = err.json().message;
+					$("#operationSuccess").modal("show");      
+				}
+				else {
+					pointer.modalTitle = "Error";
+					localStorage.message = "Internet failure Or Server error occured";
+					$("#operationSuccess").modal("show");
+				}
+				
+			}
+			);
  //   	if(this.answerSubmitted == 'w'){
 	//    	this.rightAnswer = false;
 	// 	this.wrongAnswer = true;
@@ -111,13 +120,57 @@ export class HomeComponent implements OnInit {
 	// 	},3000);
 	// }
 
-   }
+}
 
-    keyDownFunction(event) {
-  if(event.keyCode == 13) {
-   this.answerSubmit();
-   
-  }
+keyDownFunction(event) {
+	if(event.keyCode == 13) {
+		this.answerSubmit();
+		
+	}
+}
+
+fetchUserDetails() {
+	const pointer = this;
+	pointer.loaderInHome = true;
+
+	pointer.DataService.fetchUserDetails("/users/profile").
+	subscribe(
+		(data) => {
+			pointer.loaderInHome = false;
+			if(data.json().code ==0 ){
+				pointer.level = data.json().Payload.level;
+			}
+			else {
+				if(data.json().message)
+				{
+					pointer.modalTitle = "Error";
+					localStorage.message = data.json().message;
+					$("#operationSuccess").modal("show");      
+				}
+				else {
+					pointer.modalTitle = "Error";
+					localStorage.message = "Some error occured";
+					$("#operationSuccess").modal("show");
+				}
+			}
+		},
+		function(err){
+			pointer.loaderInHome = false;
+			if(err.json().message)
+			{
+				pointer.modalTitle = "Error";
+				localStorage.message = err.json().message;
+				$("#operationSuccess").modal("show");      
+			}
+			else {
+				pointer.modalTitle = "Error";
+				localStorage.message = "Internet failure Or Server error occured";
+				$("#operationSuccess").modal("show");
+			}
+			
+		}
+		);
+
 }
 
 

@@ -117,7 +117,7 @@ img {
 .go-button{
   padding-right: 35px;
   padding-left: 35px;
-  background: #2c2b30;
+  background: #6b3505;
   color: white;
   font-size: 14px;
   font-family: 'Berkshire Swash', cursive;
@@ -4061,7 +4061,7 @@ body {
     width: 100%;
   }
   .level-number{
-    padding-top: 19% !important;
+    padding-top: 18% !important;
     font-size: 30px;
   }
   .btn-group {
