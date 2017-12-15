@@ -14,7 +14,6 @@ export class LeaderBoardComponent implements OnInit {
 
   ngOnInit() {
   if(localStorage.access_token) {
-  console.log("Authenticated");
   }
   else {
   this.router.navigate([''])
