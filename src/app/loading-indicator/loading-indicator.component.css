@@ -4,7 +4,8 @@ top: 0;
 left: 0;
 bottom: 0;
 right: 0;
-background: rgba(0,0,0,0.68);
+background: black;
+opacity: .95;
 z-index: 1060;
 -webkit-box-pack: center;
 -webkit-justify-content: center;
@@ -35,19 +36,84 @@ svg {
 }
 
 
-
-.clip {
-  animation: slide 3s infinite;
+body {
+  background: black;
+  overflow: hidden;
 }
 
-@keyframes slide {
-  from {
-    transform: translateY(135px);
+.centerBike {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  margin-top: 26px;
+  margin-left: -12px;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+}
+
+#loop {
+  height: 100px;
+  width: 100px;
+  border: #bb5f27 solid 4px;
+  border-radius: 200px;
+}
+
+#loop:before {
+  background: -moz-linear-gradient(left, rgba(187, 95, 39, 0) 0%, rgba(187, 95, 39, 1) 30%, rgba(187, 95, 39, 1) 70%, rgba(187, 95, 39, 0) 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(187, 95, 39, 0)), color-stop(30%, rgba(187, 95, 39, 1)), color-stop(70%, rgba(187, 95, 39, 1)), color-stop(100%, rgba(187, 95, 39, 0)));
+  background: -webkit-linear-gradient(left, rgba(187, 95, 39, 0) 0%, rgba(187, 95, 39, 1) 30%, rgba(187, 95, 39, 1) 70%, rgba(187, 95, 39, 0) 100%);
+  background: -o-linear-gradient(left, rgba(187, 95, 39, 0) 0%, rgba(187, 95, 39, 1) 30%, rgba(187, 95, 39, 1) 70%, rgba(187, 95, 39, 0) 100%);
+  background: -ms-linear-gradient(left, rgba(187, 95, 39, 0) 0%, rgba(187, 95, 39, 1) 30%, rgba(187, 95, 39, 1) 70%, rgba(187, 95, 39, 0) 100%);
+  background: linear-gradient(to right, rgba(187, 95, 39, 0) 0%, rgba(187, 95, 39, 1) 30%, rgba(187, 95, 39, 1) 70%, rgba(187, 95, 39, 0) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00bb5f27', endColorstr='#00bb5f27', GradientType=1);
+  content: "";
+  display: block;
+  height: 4px;
+  left: -100px;
+  position: relative;
+  top: 100px;
+  width: 300px;
+}
+
+#bike-wrapper {
+  height: 108px;
+  width: 108px;
+  animation: drive 3s linear infinite;
+}
+
+#bike {
+  height: 50px;
+  width: 50px;
+  background-image: url("../../assets/images/motorbike.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:cover;
+}
+
+@keyframes drive {
+  0% {
+    margin-left: -364px;
+    opacity: 0;
   }
-  50% {
-    transform: translateY(-5px);
+  33.33% {
+    transform: rotate(0deg);
+    margin-left: -50px;
+    opacity: 1;
   }
-  to {
-    transform: translateY(135px);
+  66.66% {
+    transform: rotate(-360deg);
+    margin-left: -50px;
+    opacity: 1;
+  }
+  100% {
+    margin-left: 264px;
+    transform: rotate(-360deg);
+    opacity: 0;
   }
 }
