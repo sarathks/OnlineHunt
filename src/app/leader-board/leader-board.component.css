@@ -63,7 +63,7 @@ table th{
 }
 
 table thead{
-    color: white;
+    color: #0a0606;
     font-size: 16px;
     font-family: 'Comfortaa', cursive;
     display: table; 
@@ -74,7 +74,7 @@ table thead{
 table tbody{
    overflow-y: auto;
    display: block;
-   color: white;
+   color: #0a0606;
     font-size: 15px;
     font-family: 'Comfortaa', cursive;
    max-height: 75vh;
@@ -90,7 +90,7 @@ tbody tr {
 
 
 table td {
-    color: white;
+    color: #0a0606;
     text-align: center;
     padding: 5px 0 5px 5px;
 }
@@ -101,6 +101,6 @@ table td {
   border: 3px solid #ffffff;
   border-radius: 10px;
   margin-top: 2%;
-  background-color: #050505;
+  background-color: #b8874d;
   opacity: .9;
 }
