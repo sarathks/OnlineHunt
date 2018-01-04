@@ -16,7 +16,7 @@
 		<div class = "col-xs-6" routerLink="/rules">Rules</div>
 	</div>
 	<div class="col-xs-4 level-part">
-		<div class = "level-number">LEVEL 12</div>	
+		<div class = "level-number">LEVEL {{level}}</div>	
 	</div>
 	<div class="col-xs-4 top-bar-items top-bar-items-right">
 	    <div class = "col-xs-6" routerLink="/leader-board">Leaderboard</div>
@@ -43,7 +43,7 @@
 
 	<div class ="container">
 		<div class="stack">
-			<img id = "photostack" src="../../assets/images/pic.jpg" width="500" height="380">
+			<img id = "photostack" src="{{levelImage}}" width="500" height="380">
 		</div>
 		<div class="row">
 			<div class="col-lg-4 col-lg-offset-4">
@@ -73,7 +73,46 @@
 
 
 <div class="wrong-page" *ngIf="wrongAnswer" >
-  <div class = "wrong-text"><img class= "wrong-smiley" src="../../assets/images/sad.png"> It was wrong, try again</div>
+ 
+
+<div class="clown">
+    <div class="hat"></div>
+    <div class="face">
+        <div class="eye">
+            <div class="tear t1"></div>
+            <div class="tear t2"></div>
+            <div class="tear t3"></div>
+            <div class="tear t4"></div>
+            <div class="tear t5"></div>
+            <div class="tear t6"></div>
+        </div>
+        <div class="eye">
+            <div class="tear t7"></div>
+            <div class="tear t8"></div>
+            <div class="tear t9"></div>
+            <div class="tear t10"></div>
+            <div class="tear t11"></div>
+            <div class="tear t12"></div>
+        </div>
+        <div class="nose"></div>
+        <div class="mouth"></div>
+    </div>
 </div>
+     <div class = "wrong-text">It was wrong, try again</div>
+
+<!-- 
+<div class="ballon b1"></div>
+<div class="ballon b2"></div>
+<div class="ballon b3"></div>
+<div class="ballon b4"></div> -->
+
+
+
+
+</div>
+
+
+
+
 <app-loading-indicator *ngIf = "loaderInHome" ></app-loading-indicator>
 <app-modal [title]="modalTitle"></app-modal>

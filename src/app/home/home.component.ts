@@ -20,7 +20,8 @@ export class HomeComponent implements OnInit {
 	public answerSubmitted:any = "";
 	public loaderInHome:any = false;
 	public modalTitle:any;
-	public level:any = 1;
+	public level:any = "";
+	public levelImage:any = "";
 
 
 	constructor(private router:Router, private DataService:DataService) { }
@@ -139,6 +140,7 @@ fetchUserDetails() {
 			pointer.loaderInHome = false;
 			if(data.json().code ==0 ){
 				pointer.level = data.json().Payload.level;
+				pointer.levelImage = data.json().Payload.level_image;
 			}
 			else {
 				if(data.json().message)
