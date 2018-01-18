@@ -58,11 +58,10 @@ export class HomeComponent implements OnInit {
 		const pointer = this;
 		pointer.loaderInHome = true;
 		var params = {
-			"parentId":(JSON.parse(localStorage.loggedInParent)).parentId,
-			"sessionId":(JSON.parse(localStorage.loggedInParent)).sessionId
+			  "answer":this.answerSubmitted
 		};
 
-		pointer.DataService.fetchData(params,"/pick_up/get_student_list").
+		pointer.DataService.sendAnswer(params,"/answer").
 		subscribe(
 			(data) => {
 				pointer.loaderInHome = false;
