@@ -4709,7 +4709,7 @@ svg {
 }
 
 .word {
-  font-family: "Bangers", cursive;
+  /*font-family: "Bangers", cursive;*/
   letter-spacing: 0.05em;
   color: white;
   padding: 0.5em;
