@@ -13,7 +13,7 @@ declare var $:any;
 export class HomeComponent implements OnInit {
 
 	public dotArray:any = [];
-
+	public wordsArray = ["Polichu", "vere level" , "Thani raavanan"];
 	public rightAnswer:any = false;
 	public wrongAnswer:any = false;
 	public questionPage:any = true;
@@ -69,6 +69,10 @@ export class HomeComponent implements OnInit {
 					this.rightAnswer = true;
 					this.wrongAnswer = false;
 					this.questionPage = false;
+					$(document).ready(function() {
+						$(".word").text(this.wordsArray[Math.floor(Math.random() * this.wordsArray.length)]);
+					});
+
 					$('body').css("position","relative");
 					setTimeout(function(){
 						location.reload();
