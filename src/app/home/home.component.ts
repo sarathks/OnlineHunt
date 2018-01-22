@@ -57,6 +57,7 @@ export class HomeComponent implements OnInit {
 	answerSubmit(): any {
 		const pointer = this;
 		pointer.loaderInHome = true;
+		this.answerSubmitted = (this.answerSubmitted.replace(/\s/g, '')).toLowerCase();
 		var params = {
 			  "answer":this.answerSubmitted
 		};
