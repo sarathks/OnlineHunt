@@ -66,13 +66,12 @@ export class HomeComponent implements OnInit {
 		subscribe(
 			(data) => {
 				pointer.loaderInHome = false;
-				if(data.json().code == 0 ){
+				if(data.json().code ==0 ){
 					this.rightAnswer = true;
 					this.wrongAnswer = false;
 					this.questionPage = false;
 					$(document).ready(function() {
-						var wordsArray = ["പൊളിച്ചു ", "മാരകം" , "ഭയങ്കരം തന്നെ"];
-						$(".fontMl").text(wordsArray[Math.floor(Math.random() * wordsArray.length)]);
+						$(".fontMl").text(pointer.DataService.getMalayalamWords());
 					});
 
 					$('body').css("position","relative");
