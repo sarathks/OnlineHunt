@@ -13,7 +13,6 @@ declare var $:any;
 export class HomeComponent implements OnInit {
 
 	public dotArray:any = [];
-	public wordsArray = ["Polichu", "vere level" , "Thani raavanan"];
 	public rightAnswer:any = false;
 	public wrongAnswer:any = false;
 	public questionPage:any = true;
@@ -22,6 +21,7 @@ export class HomeComponent implements OnInit {
 	public modalTitle:any;
 	public level:any = "";
 	public levelImage:any = "";
+	public congratzText:any = "";
 
 
 	constructor(private router:Router, private DataService:DataService) { }
@@ -66,12 +66,13 @@ export class HomeComponent implements OnInit {
 		subscribe(
 			(data) => {
 				pointer.loaderInHome = false;
-				if(data.json().resultCode ==0 ){
+				if(data.json().code == 0 ){
 					this.rightAnswer = true;
 					this.wrongAnswer = false;
 					this.questionPage = false;
 					$(document).ready(function() {
-						$(".word").text(this.wordsArray[Math.floor(Math.random() * this.wordsArray.length)]);
+						var wordsArray = ["പൊളിച്ചു ", "മാരകം" , "ഭയങ്കരം തന്നെ"];
+						$(".fontMl").text(wordsArray[Math.floor(Math.random() * wordsArray.length)]);
 					});
 
 					$('body').css("position","relative");
