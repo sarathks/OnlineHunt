@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http,Headers, RequestOptions } from '@angular/http';
-
+import { environment } from '../environments/environment';
 @Injectable()
 
 export class DataService {
@@ -13,9 +13,9 @@ export class DataService {
 	}
 
 	fetchData(dataToServer: any, nameOfApi:any){
+
 		const paramsBody = (dataToServer);//stringfy sometimes
-		var url = 'http://10.4.5.23:8080'
-		return this.http.post(this.url+ nameOfApi, paramsBody);
+		return this.http.post(environment.url+ nameOfApi, paramsBody);
 	}
 
 	fetchUserDetails(nameOfApi:any){
@@ -23,9 +23,7 @@ export class DataService {
 		headers.append('Content-Type', 'application/json');
 		headers.append('Authorization', localStorage.access_token);
 		const options = new RequestOptions({headers: headers});
-
-		var url = 'http://10.4.5.23:8080'
-		return this.http.get(this.url+ nameOfApi, options);
+		return this.http.get(environment.url+ nameOfApi, options);
 	}
 
 	sendAnswer(dataToServer: any, nameOfApi:any){
@@ -33,10 +31,8 @@ export class DataService {
 		headers.append('Content-Type', 'application/json');
 		headers.append('Authorization', localStorage.access_token);
 		const options = new RequestOptions({headers: headers});
-		
 		const paramsBody = (dataToServer);//stringfy sometimes
-		var url = 'http://10.4.5.23:8080'
-		return this.http.post(this.url+ nameOfApi, paramsBody,options);
+		return this.http.post(environment.url+ nameOfApi, paramsBody,options);
 	}
 
 	getMalayalamWords(){
