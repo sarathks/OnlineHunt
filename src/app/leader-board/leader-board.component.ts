@@ -19,5 +19,9 @@ export class LeaderBoardComponent implements OnInit {
   this.router.navigate([''])
   }
   }
+  logout() {
+  this.router.navigate([''])
+  localStorage.access_token = "";
+}
 
 }

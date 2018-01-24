@@ -20,7 +20,7 @@
 	</div>
 	<div class="col-xs-4 top-bar-items top-bar-items-right">
 	    <div class = "col-xs-6" routerLink="/leader-board">Leaderboard</div>
-		<div class = "col-xs-6" routerLink="/">Logout</div>
+		<div class = "col-xs-6" routerLink="/"  (click) = "logout()">Logout</div>
 	</div>
 	  <div class="btn-group">
         <div type="button"
@@ -34,7 +34,7 @@
           <li routerLink="/home">Home</li>
           <li routerLink="/rules">Rules </li>
           <li routerLink="/leader-board">Leaderboard </li>
-          <li routerLink="/">Logout </li>
+          <li routerLink="/" (click) = "logout()">Logout </li>
         </ul>
       </div>
 	</div>

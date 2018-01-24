@@ -179,5 +179,10 @@ fetchUserDetails() {
 
 }
 
+logout() {
+	this.router.navigate([''])
+localStorage.access_token = "";
+}
+
 
 }
