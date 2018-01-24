@@ -22,11 +22,14 @@ export class HomeComponent implements OnInit {
 	public level:any = "";
 	public levelImage:any = "";
 	public congratzText:any = "";
+	public WrongFunnyImage:any = "";
 
 
 	constructor(private router:Router, private DataService:DataService) { }
 
 	ngOnInit() {
+		
+
 		if(localStorage.access_token) {
 			for(var i=0;i<30;i++){
 				this.dotArray.push(i);
@@ -82,6 +85,7 @@ export class HomeComponent implements OnInit {
 				else {
 					this.rightAnswer = false;
 					this.wrongAnswer = true;
+					this.WrongFunnyImage = '../../assets/funny/'+(Math.floor(Math.random() * 54) + 1 )+'.png';
 					this.questionPage = false;
 					$('body').css("position","relative");
 					setTimeout(function(){
@@ -157,6 +161,7 @@ fetchUserDetails() {
 					pointer.modalTitle = "Error";
 					localStorage.message = "Some error occured";
 					$("#operationSuccess").modal("show");
+
 				}
 			}
 		},
@@ -164,6 +169,7 @@ fetchUserDetails() {
 			pointer.loaderInHome = false;
 			if(err.json().message)
 			{
+				pointer.levelImage = '../../assets/images/noLevel.png'		
 				pointer.modalTitle = "Error";
 				localStorage.message = err.json().message;
 				$("#operationSuccess").modal("show");      
