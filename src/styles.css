@@ -84,25 +84,18 @@
 }
 
 
-/*@font-face {
-    font-family: 'Malayalam';
-    src: url('../fonts/meera.eot');
-    src: url('../fonts/meera.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/meera.woff') format('woff'),
-         url('../fonts/meera.ttf') format('truetype'),
-         url('../fonts/meera.svg#Malayalam') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}*/
-
-
+/* latin */
 @font-face {
-  font-family: 'meeraregular';
+  font-family: 'Alegreya';
   font-style: normal;
   font-weight: 400;
-  src: url(https://smc.org.in/downloads/fonts/meera/Meera.woff2?v=7.0) format('woff2'), url(https://smc.org.in/downloads/fonts/meera/Meera.woff?v=7.0) format('woff'), url(https://smc.org.in/downloads/fonts/meera/Meera.ttf?v=7.0) format('truetype');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+0D01-0D7F, U+200C-U+200D, U+25CC;
+  src: local('Alegreya Regular'), local('Alegreya-Regular'), url(/assets/fonts/4vRXIs1BEbKX6mQ7lGu1I_esZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
 }
+
+
+
+
 
 @font-face {
   font-family: 'urrob-Regular';
@@ -120,3 +113,6 @@
     color: red;
     font-weight: 800;
 }
+
+
+@import url('https://fonts.googleapis.com/css?family=Alegreya:400,500');

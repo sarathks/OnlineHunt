@@ -18,110 +18,18 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td > 1 </td>
-						<td>Shinija Mohan</td>
-						<td>20</td>
-						<td>23/12/2017 10:11:08</td>
-					</tr>
-					<tr>
-						<td > 2 </td>
-						<td>Sarath Sivaraman</td>
-						<td>19</td>
-						<td>23/12/2017 10:11:08</td>
-					</tr>
-					<tr>
-						<td > 2 </td>
-						<td>Sarath Sivaraman</td>
-						<td>19</td>
-						<td>23/12/2017 10:11:08</td>
-					</tr>
-					<tr>
-						<td > 2 </td>
-						<td>Sarath Sivaraman</td>
-						<td>19</td>
-						<td>23/12/2017 10:11:08</td>
-					</tr>
-					<tr>
-						<td > 2 </td>
-						<td>Sarath Sivaraman</td>
-						<td>19</td>
-						<td>23/12/2017 10:11:08</td>
-					</tr>
-					<tr>
-						<td > 2 </td>
-						<td>Sarath Sivaraman</td>
-						<td>19</td>
-						<td>23/12/2017 10:11:08</td>
-					</tr>
-					<tr>
-						<td > 2 </td>
-						<td>Sarath Sivaraman</td>
-						<td>19</td>
-						<td>23/12/2017 10:11:08</td>
-					</tr>
-					<tr>
-						<td > 2 </td>
-						<td>Sarath Sivaraman</td>
-						<td>19</td>
-						<td>23/12/2017 10:11:08</td>
-					</tr>
-					<tr>
-						<td > 2 </td>
-						<td>Sarath Sivaraman</td>
-						<td>19</td>
-						<td>23/12/2017 10:11:08</td>
-					</tr>
-					<tr>
-						<td > 2 </td>
-						<td>Sarath Sivaraman</td>
-						<td>19</td>
-						<td>23/12/2017 10:11:08</td>
-					</tr>
-					<tr>
-						<td > 2 </td>
-						<td>Sarath Sivaraman</td>
-						<td>19</td>
-						<td>23/12/2017 10:11:08</td>
-					</tr>
-					<tr>
-						<td > 2 </td>
-						<td>Sarath Sivaraman</td>
-						<td>19</td>
-						<td>23/12/2017 10:11:08</td>
-					</tr>
-					<tr>
-						<td > 2 </td>
-						<td>Sarath Sivaraman</td>
-						<td>19</td>
-						<td>23/12/2017 10:11:08</td>
-					</tr>
-					<tr>
-						<td > 2 </td>
-						<td>Sarath Sivaraman</td>
-						<td>19</td>
-						<td>23/12/2017 10:11:08</td>
-					</tr>
-					<tr>
-						<td > 2 </td>
-						<td>Sarath Sivaraman</td>
-						<td>19</td>
-						<td>23/12/2017 10:11:08</td>
-					</tr>
-					<tr>
-						<td > 2 </td>
-						<td>Sarath Sivaraman</td>
-						<td>19</td>
-						<td>23/12/2017 10:11:08</td>
-					</tr>
-					<tr>
-						<td > 2 </td>
-						<td>Sarath Sivaraman</td>
-						<td>19</td>
-						<td>23/12/2017 10:11:08</td>
+					<tr *ngFor="let rankHolder of rankList; let i = index ">
+						<td >{{i+1}}</td>
+						<td>{{rankHolder.email}}</td>
+						<td>{{rankHolder.level}}</td>
+						<td>{{rankHolder.previous_level}}</td>
 					</tr>
 				</tbody>
 			</table>
 	</div>
 
 </div>
+
+
+<app-loading-indicator *ngIf = "loaderInLeaderBoard" ></app-loading-indicator>
+<app-modal [title]="modalTitle"></app-modal>
