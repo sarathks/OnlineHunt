@@ -260,3 +260,40 @@ input[type=text], input[type=password]{
 .form-control{
   margin-bottom: 9px;
 }
+
+.instructionset{
+  max-height: 75vh;
+    overflow: auto;
+  margin: 5%;
+    padding: 1%;
+    font-family: 'Alegreya', serif;
+    letter-spacing:1px;
+    color: #a12a2a;
+    list-style:none;
+    font-size: 16px;
+}
+
+.instructionset li{
+  padding: 1%;
+}
+
+.instructionset a{
+  color:#860d00;
+  font-weight: 800;
+}
+
+li::before {
+  content: "<>";
+  margin-right: 4px;
+  font-size: 25px;
+  color: #582900; /* or whatever color you prefer */
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}

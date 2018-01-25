@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
   public passwordError:any;
   public nameError:any;
   public loaderInLogin:any = false;
+  public instructionSeen:any = false;
   constructor(private router:Router,private DataService:DataService) { }
 
   ngOnInit() {
@@ -68,6 +69,7 @@ export class LoginComponent implements OnInit {
 
 
  register() {
+  this.instructionSeen = false;
    $("#registerModal").modal("show");
  }
 
