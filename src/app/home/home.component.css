@@ -23,6 +23,11 @@
     text-align: center;
 }
 
+
+.setMarginBottom{
+  margin-bottom: 85px !important;
+}
+
 .wrongAnswerImage{
     text-align: center;
     margin: 18vh 5% 0 5%;

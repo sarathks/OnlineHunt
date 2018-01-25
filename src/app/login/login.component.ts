@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
   constructor(private router:Router,private DataService:DataService) { }
 
   ngOnInit() {
+    $('body').css("position","relative");
   }
   
 
