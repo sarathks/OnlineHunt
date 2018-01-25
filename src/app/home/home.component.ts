@@ -85,7 +85,7 @@ export class HomeComponent implements OnInit {
 				else {
 					this.rightAnswer = false;
 					this.wrongAnswer = true;
-					this.WrongFunnyImage = '../../assets/funny/'+(Math.floor(Math.random() * 54) + 1 )+'.png';
+					this.WrongFunnyImage = '../../assets/funny/'+(Math.floor(Math.random() * 54) + 1 )+'.jpg';
 					this.questionPage = false;
 					$('body').css("position","relative");
 					setTimeout(function(){
