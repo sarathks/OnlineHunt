@@ -28,7 +28,7 @@
 }
 
 .top-bar-items-right{
-  width:42% !important;
+  width:42%;
     cursor: pointer;
 }
 
@@ -94,3 +94,11 @@ ul{
     display: block; 
 }
 
+
+@media only screen and (min-width: 900px){
+  .top-bar-items-right{
+    width: 10% !important;
+    float: right !important;
+    margin-right: 5%;
+  }
+}

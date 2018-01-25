@@ -1,4 +1,19 @@
 
+@media only screen and (max-width: 750px){
+
+  .top-bar-items-right{
+    width: 20% !important;
+    float: right !important;
+    margin-right: 5%;
+  }
+
+
+}
+
+
+
+
+
 /* latin */
 @font-face {
   font-family: 'Pacifico';
@@ -114,5 +129,3 @@
     font-weight: 800;
 }
 
-
-@import url('https://fonts.googleapis.com/css?family=Alegreya:400,500');
