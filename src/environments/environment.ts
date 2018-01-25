@@ -6,6 +6,6 @@
 export const environment = {
   production: false,
   envName: 'dev',
-  url: 'http://10.4.5.23:8080',
- redirectUrl: 'http://10.4.5.23:8080'
+  url: 'https://quest.qburst.build/api',
+ redirectUrl: 'https://quest.qburst.build/api'
 };
