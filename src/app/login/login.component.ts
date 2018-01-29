@@ -127,4 +127,59 @@ export class LoginComponent implements OnInit {
  }
 
 }
+
+
+ forgotPassword() {
+   $("#forgot-password").modal("show");
+ }
+
+ resetPassword(){
+  const pointer = this;
+  var params = {
+   "email_id":this.email
+ };
+
+ var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+ this.emailErorr = re.test(this.email);
+ if(this.emailErorr==false)
+ {
+
+ }
+
+ else{
+   $("#forgot-password").modal("hide");
+   
+   this.DataService.fetchData(params,"/users/password/reset").
+   subscribe(
+     (data) => {
+       if(data.json().code ==0 ){
+         pointer.modalTitle = "Success";
+         localStorage.message = data.json().message;
+         $("#operationSuccess").modal("show");
+       }
+       else {
+        pointer.modalTitle = "Error";
+        localStorage.message = data.json().message;
+        $("#operationSuccess").modal("show");
+      }
+    },
+    function(err){
+      if(err.json().message)
+      {
+       pointer.modalTitle = "Error";
+       localStorage.message = err.json().message;
+       $("#operationSuccess").modal("show");
+     }
+     else {
+      pointer.modalTitle = "Error";
+      localStorage.message = "Internet failure Or Server error occured";
+      $("#operationSuccess").modal("show");
+    }
+
+  }
+  );
+ }
+
+}
+
 }
