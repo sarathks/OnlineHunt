@@ -18,6 +18,11 @@ export class DataService {
 		return this.http.post(environment.url+ nameOfApi, paramsBody);
 	}
 
+	passwordReset(dataToServer: any, nameOfApi:any){
+		const paramsBody = (dataToServer);//stringfy sometimes
+		return this.http.patch(environment.url+ nameOfApi, paramsBody);
+	}
+
 	fetchUserDetails(nameOfApi:any){
 		const headers = new Headers();
 		headers.append('Content-Type', 'application/json');

@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     $('body').css("position","relative");
+    localStorage.clear();
   }
   
 
@@ -149,7 +150,7 @@ export class LoginComponent implements OnInit {
  else{
    $("#forgot-password").modal("hide");
    
-   this.DataService.fetchData(params,"/users/password/reset").
+   this.DataService.passwordReset(params,"/users/password/reset").
    subscribe(
      (data) => {
        if(data.json().code ==0 ){

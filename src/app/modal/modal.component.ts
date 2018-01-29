@@ -20,6 +20,7 @@ export class ModalComponent implements OnInit {
   	$('#operationSuccess').on('hidden.bs.modal', function () {
     	if(localStorage.invalidToken == "true"){
    			localStorage.access_token = "";
+        localStorage.invalidToken = "";
         location.reload();
     	}
 	})
