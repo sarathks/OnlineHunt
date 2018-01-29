@@ -13,7 +13,10 @@
        <input class = "login-input" type="password" name = "pwd" [(ngModel)]="pwd" placeholder="Password"/>
      </div>
      <div  *ngIf= "loginCredentialError" class = "credentialErrors">Invalid Username or Password !!!</div>
-     <a class="new-user" (click)="register()" >sign up!</a>    
+     <div class="signUpAndForgot">
+        <a class="new-user" (click)="register()" >sign up!</a>
+     <a class="forgot-pwd" (click)="forgotPassword()" >forgot Password!</a>  
+     </div>
      <div class = "submit-bomb" >
       <p (click)="login()">go</p>
     </div>
@@ -31,7 +34,7 @@
 
 <div *ngIf="!instructionSeen" class = "instructionset">
   <li>This game is only for Qburst Koratty employees. So use your official email Id. Other emails will not be considered</li>
-  <li>You have to enter your name and valid email Id for regestration</li>
+  <li>You have to enter your name and valid email Id for registration</li>
   <li>Password must be atleast 9 characters of length containing letters and numbers </li>
   <li>The game related rules are describerd in the <a href="https://quest.qburst.build/rules" target="_blank">Rules Section,</a> please read them carefully before you go</li>
 <div class="modal-footer">
@@ -95,6 +98,44 @@
       <button type="button"
       class="btn cw-button cw-button-grey"
       (click) = "createNewUser()" >Go</button>
+    </div>
+  </div>
+</form>
+
+
+
+</div>
+</div>
+</div>
+
+<div id = "forgot-password" class="modal fade" tabindex="-1" role="dialog">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+  <button type="button" class="close register-close" data-dismiss="modal">&times;</button>
+  <h4 class="modal-title">FORGOT PASSWORD</h4>
+</div>
+
+<form  name="form" >
+  <div class="modal-body">
+   <div>
+      <p> Enter your registered emailID </p>
+      <div class="form-group">
+        <input name="email" [(ngModel)]="email"
+        type="email"
+        placeholder="Email"
+        class="form-control" (focus) = "emailErorr = true">
+        <span class="credentialErrors"
+        *ngIf="emailErorr==false">Invalid email address</span>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+
+    <div>
+      <button type="button"
+      class="btn cw-button cw-button-grey"
+      (click) = "resetPassword()" >ok</button>
     </div>
   </div>
 </form>
