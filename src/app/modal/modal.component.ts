@@ -1,4 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
+
+declare var $:any;
 
 @Component({
   selector: 'app-modal',
@@ -9,12 +12,20 @@ export class ModalComponent implements OnInit {
 
   @Input() title: any;
   
-  constructor() { 
-}
+  constructor(private router:Router) { 
+  }
 
   ngOnInit() {
+
+  	$('#operationSuccess').on('hidden.bs.modal', function () {
+    	if(localStorage.invalidToken == "true"){
+   			localStorage.access_token = "";
+    		this.router.navigate([''])
+    	}
+	})
+
   }
  getSucessString(): any {
   	return (localStorage.message) ? localStorage.message : "";
-  }
+ }
 }

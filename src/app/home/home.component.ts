@@ -167,9 +167,19 @@ fetchUserDetails() {
 		},
 		function(err){
 			pointer.loaderInHome = false;
-			if(err.json().message)
+			
+			if(err.json().code == 2001){
+
+				pointer.levelImage = '../../assets/images/invalid.png';
+				localStorage.invalidToken = true;
+				pointer.modalTitle = "Error";
+				localStorage.message = err.json().message;
+				$("#operationSuccess").modal("show");      
+			}
+
+			else if(err.json().message)
 			{
-				pointer.levelImage = '../../assets/images/noLevel.png'		
+				pointer.levelImage = '../../assets/images/noLevel.png'	
 				pointer.modalTitle = "Error";
 				localStorage.message = err.json().message;
 				$("#operationSuccess").modal("show");      
@@ -187,7 +197,7 @@ fetchUserDetails() {
 
 logout() {
 	this.router.navigate([''])
-localStorage.access_token = "";
+	localStorage.access_token = "";
 }
 
 
