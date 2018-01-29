@@ -31,6 +31,7 @@ export class LeaderBoardComponent implements OnInit {
         {
           pointer.rankList = data.json().Payload;
         }
+        
         else
         {
           if(data.json().message)
@@ -49,7 +50,14 @@ export class LeaderBoardComponent implements OnInit {
     },
     function(err){
       pointer.loaderInLeaderBoard = false;
-      if(err.json().message)
+      
+      if(err.json().code == 2001){
+        localStorage.invalidToken = true;
+        localStorage.message = err.json().message;
+        $("#operationSuccess").modal("show");      
+      }
+
+      else if(err.json().message)
       {
         
         localStorage.message = err.json().message;

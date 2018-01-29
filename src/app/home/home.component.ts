@@ -82,6 +82,8 @@ export class HomeComponent implements OnInit {
 						location.reload();
 					},3000);
 				}
+				
+
 				else {
 					this.rightAnswer = false;
 					this.wrongAnswer = true;
@@ -95,12 +97,20 @@ export class HomeComponent implements OnInit {
 			},
 			function(err){
 				pointer.loaderInHome = false;
-				if(err.json().message)
+				if(err.json().code == 2001){
+					localStorage.invalidToken = true;
+					localStorage.message = err.json().message;
+					$("#operationSuccess").modal("show");      
+				}
+
+
+				else if(err.json().message)
 				{
 					pointer.modalTitle = "Error";
 					localStorage.message = err.json().message;
 					$("#operationSuccess").modal("show");      
 				}
+				
 				else {
 					pointer.modalTitle = "Error";
 					localStorage.message = "Internet failure Or Server error occured";
@@ -150,6 +160,7 @@ fetchUserDetails() {
 				pointer.level = data.json().Payload.level;
 				pointer.levelImage = data.json().Payload.level_image;
 			}
+			
 			else {
 				if(data.json().message)
 				{
@@ -177,7 +188,7 @@ fetchUserDetails() {
 				$("#operationSuccess").modal("show");      
 			}
 
-			else if(err.json().message)
+			else if(err.json().code == 5000)
 			{
 				pointer.levelImage = '../../assets/images/noLevel.png'	
 				pointer.modalTitle = "Error";
@@ -186,6 +197,14 @@ fetchUserDetails() {
 				$("#answerInput").css("display","none");
 				$('body').css("position","relative");      
 			}
+
+			else if(err.json().message)
+			{
+				pointer.modalTitle = "Error";
+				localStorage.message = err.json().message;
+				$("#operationSuccess").modal("show");
+			}
+
 			else {
 				pointer.modalTitle = "Error";
 				localStorage.message = "Internet failure Or Server error occured";

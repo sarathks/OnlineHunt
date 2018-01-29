@@ -13,7 +13,7 @@ export class RulesComponent implements OnInit {
 
   ngOnInit() {
 
-    if(localStorage.access_token == undefined) {
+    if(!localStorage.access_token) {
       $(".top-bar-items").css("display","none");
     }
   	
