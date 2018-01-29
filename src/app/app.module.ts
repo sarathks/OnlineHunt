@@ -28,6 +28,10 @@ const appRoutes:Routes = [
 {
   path:'rules',
   component: RulesComponent
+},
+{
+  path: '**',
+  redirectTo: '/home'
 }
 ]
 
