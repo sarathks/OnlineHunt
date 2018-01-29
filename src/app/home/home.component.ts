@@ -182,7 +182,9 @@ fetchUserDetails() {
 				pointer.levelImage = '../../assets/images/noLevel.png'	
 				pointer.modalTitle = "Error";
 				localStorage.message = err.json().message;
-				$("#operationSuccess").modal("show");      
+				$("#operationSuccess").modal("show");
+				$("#answerInput").css("display","none");
+				$('body').css("position","relative");      
 			}
 			else {
 				pointer.modalTitle = "Error";
