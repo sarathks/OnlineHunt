@@ -20,7 +20,12 @@ export class AppComponent {
     }
     
   });
-    }
+
+      window.addEventListener("orientationchange", function() {
+        // Announce the new orientation number
+        location.reload();
+      }, false);
+}
 
 
 }
