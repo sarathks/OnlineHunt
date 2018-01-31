@@ -83,4 +83,10 @@ export class LeaderBoardComponent implements OnInit {
   localStorage.access_token = "";
 }
 
+dateToIST(currentDate){
+  var timeInIST = new Date(currentDate);
+  return (timeInIST.toString().split(" ").slice(0, 5).join(' '));
+}
+
+
 }
