@@ -48,7 +48,7 @@
 		<div class="row">
 			<div class="col-lg-4 col-lg-offset-4">
 				<div id="answerInput" class="input-group setMarginBottom">
-					<input (keydown)="keyDownFunction($event)"  type="text" [(ngModel)]="answerSubmitted" class="form-control answer-bar" /> 
+					<input (keydown)="keyDownFunction($event)"  type="text" [(ngModel)]="answerSubmitted" class="form-control answer-bar" autofocus/> 
 					<span class="input-group-btn">
 						<button class="btn btn-default go-button" type="button" (click) = "answerSubmit()">go</button>
 					</span>
