@@ -23,6 +23,13 @@
     text-align: center;
 }
 
+.hitCounter{
+  text-align: center;
+    font-size: 25px;
+    margin-top: 15px;
+    font-weight: 800;
+    font-family: 'Spectral SC';
+}
 
 .setMarginBottom{
   margin-bottom: 85px !important;

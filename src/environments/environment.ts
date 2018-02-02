@@ -7,5 +7,7 @@ export const environment = {
   production: false,
   envName: 'dev',
   url: 'https://quest.qburst.build/api',
- redirectUrl: 'https://quest.qburst.build/api'
+ redirectUrl: 'https://quest.qburst.build/api',
+ hitsApiInterval:'5000'
+
 };

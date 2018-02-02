@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { DataService } from '../data.service';
+import { environment } from '../../environments/environment';
+
 
 declare var $:any;
 
@@ -23,11 +25,16 @@ export class HomeComponent implements OnInit {
 	public levelImage:any = "";
 	public congratzText:any = "";
 	public WrongFunnyImage:any = "";
+	public totalHits:any = 10000;
 
 
 	constructor(private router:Router, private DataService:DataService) { }
 
 	ngOnInit() {
+
+
+
+
 		
 
 		if(localStorage.access_token) {
@@ -49,11 +56,34 @@ export class HomeComponent implements OnInit {
 			}
 
 			this.fetchUserDetails();
+			this.getHitsCount();
 		}
 		else {
 			this.router.navigate([''])
 		}
 		
+	}
+
+
+	hitsFromServer(){
+		const pointer = this;
+		pointer.DataService.fetchUserDetails("/stat/submissions").
+		subscribe(
+			(data) => {
+				this.totalHits = data.json().count;
+				pointer.animateValue('counter', (this.totalHits-100), this.totalHits, 100);
+			},
+			function(err){
+
+			}
+		);
+	}
+
+	getHitsCount():any{
+		const pointer = this;
+		setInterval(function(){
+			pointer.hitsFromServer();
+		}, environment.hitsApiInterval);
 	}
 
 
@@ -153,18 +183,6 @@ fetchUserDetails() {
 	pointer.loaderInHome = true;
 
 
-
-	pointer.DataService.fetchUserDetails("/stat/submissions").
-	subscribe(
-		(data) => {
-			console.log(data);
-		},
-		function(err){
-
-		}
-		);
-
-
 	pointer.DataService.fetchUserDetails("/users/profile").
 	subscribe(
 		(data) => {
@@ -172,6 +190,7 @@ fetchUserDetails() {
 			if(data.json().code ==0 ){
 				pointer.level = data.json().Payload.level;
 				pointer.levelImage = data.json().Payload.level_image;
+				pointer.hitsFromServer();
 			}
 			
 			else {
@@ -233,6 +252,29 @@ logout() {
 	this.router.navigate([''])
 	localStorage.access_token = "";
 }
+
+
+animateValue(id, start, end, duration) {
+    var range = end - start;
+    var current = start;
+    var increment = end > start? 1 : -1;
+    var stepTime = Math.abs(Math.floor(duration / range));
+    var obj = document.getElementById(id);
+    var timer = setInterval(function() {
+        current += increment;
+        obj.innerHTML = current;
+        if (current == end) {
+            clearInterval(timer);
+        }
+    }, stepTime);
+}
+
+// animateValue("value", 100, 25, 2000);
+
+
+
+
+
 
 
 }

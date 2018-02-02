@@ -84,8 +84,8 @@ export class LeaderBoardComponent implements OnInit {
 }
 
 dateToIST(currentDate){
-  var timeInIST = new Date(currentDate);
-  return (timeInIST.toString().split(" ").slice(0, 5).join(' '));
+  var timeInIST = new Date(currentDate).toString()
+  return (timeInIST.split(" ").slice(0, 5).join(' '));
 }
 
 
