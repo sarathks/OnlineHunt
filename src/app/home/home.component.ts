@@ -152,6 +152,19 @@ fetchUserDetails() {
 	const pointer = this;
 	pointer.loaderInHome = true;
 
+
+
+	pointer.DataService.fetchUserDetails("/stat/submissions").
+	subscribe(
+		(data) => {
+			console.log(data);
+		},
+		function(err){
+
+		}
+		);
+
+
 	pointer.DataService.fetchUserDetails("/users/profile").
 	subscribe(
 		(data) => {

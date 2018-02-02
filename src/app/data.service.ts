@@ -23,6 +23,10 @@ export class DataService {
 		return this.http.patch(environment.url+ nameOfApi, paramsBody);
 	}
 
+	fetchNoOfHits(nameOfApi:any){
+		return this.http.get(environment.url+ nameOfApi);
+	}
+
 	fetchUserDetails(nameOfApi:any){
 		const headers = new Headers();
 		headers.append('Content-Type', 'application/json');
