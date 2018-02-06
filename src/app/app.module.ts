@@ -11,6 +11,7 @@ import { DataService } from './data.service';
 import { HttpModule } from '@angular/http';
 import { LoadingIndicatorComponent } from './loading-indicator/loading-indicator.component';
 import { ModalComponent } from './modal/modal.component';
+import { WinnersComponent } from './winners/winners.component';
 
 const appRoutes:Routes = [
 {
@@ -29,6 +30,12 @@ const appRoutes:Routes = [
   path:'rules',
   component: RulesComponent
 },
+
+{
+  path:'winners',
+  component: WinnersComponent
+},
+
 {
   path: '**',
   redirectTo: '/home'
@@ -43,7 +50,8 @@ const appRoutes:Routes = [
     LeaderBoardComponent,
     RulesComponent,
     LoadingIndicatorComponent,
-    ModalComponent
+    ModalComponent,
+    WinnersComponent
   ],
   imports: [
     BrowserModule,RouterModule.forRoot(appRoutes),
