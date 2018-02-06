@@ -1,0 +1,167 @@
+.home-container {
+  background-image: url(../../assets/images/login.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+.top-bar{
+  height: 60px;
+  cursor: pointer;
+    
+}
+
+/*.top-bar:hover { 
+    background-color:#2b2b2f;
+    -webkit-transition: background-color 400ms linear;
+    -ms-transition: background-color 400ms linear;
+    transition: background-color 400ms linear;
+    border: 2px solid #4f4949;
+}
+*/
+
+.top-bar-items-left{
+  margin-left: 15px;
+}
+
+.top-bar-items-right{
+  width:46%;
+    cursor: pointer;
+}
+
+.top-bar-items-left div {
+  cursor: pointer;
+}
+
+
+
+.top-bar-items-left div:hover{
+  color: #884205;
+  font-weight: 800;
+}
+
+.top-bar-items-right:hover{
+  color: #884205;
+  font-weight: 800;
+}
+
+.top-bar-items{
+  margin-top: 20px;
+  color:#B8753A;
+  font-size: 17px;
+  /*font-family: 'Pacifico', cursive;*/
+  font-family: 'Berkshire Swash', cursive;
+
+}
+
+
+table th{
+    padding: 9px 0 9px 5px;
+    font-size: 15px;
+    text-align: center;
+    width: auto;
+}
+
+table thead{
+    color: #0a0606;
+    font-size: 16px;
+    font-family: 'Comfortaa', cursive;
+    display: table; 
+    width: 100%;
+    table-layout: fixed;
+}
+
+table tbody{
+  overflow-y: auto;
+  display: block;
+  color: #0a0606;
+  font-size: 18px;
+  font-family: 'Alegreya', serif;
+  max-height: 72vh;
+  width: 100%;
+}
+
+tbody tr {
+   display: table;
+   width: 100%;
+   table-layout: fixed;
+}
+
+
+
+table td {
+    color: #0a0606;
+    text-align: center;
+    padding: 5px 0 5px 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+::-webkit-scrollbar { 
+    display: block; 
+}
+.table-container {
+  border: 3px solid #ffffff;
+  border-radius: 10px;
+  margin-top: 2%;
+  background-color: #b8874d;
+  opacity: .9;
+}
+
+
+.winnerRow{
+    border-radius: 8px;
+    border: 2px solid #884205;
+    padding: 10px;
+    width: 40%;
+    margin: 0 auto;
+    /*background: linear-gradient(to right, #eef1d6 , #e7dc54, #f8e61c);*/
+     font-family: 'Spectral SC';
+}
+
+.winnerDetails{
+  margin-left: 2%;
+  font-size: 17px;
+}
+
+.winnerImage{
+  width: 250px;
+  height: 200px;
+  float:right;
+}
+
+.trophyImg{
+  width: 40px;
+  height: 40px;
+}
+
+.fullWidth{
+    width: 100%;
+    overflow: hidden;
+    padding-top: 6px;
+}
+
+
+.halfWidth{
+    width: 50%;
+    overflow: hidden;
+    padding-top: 6px;
+    float: left;
+}
+
+.firstPrize{
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 24px;
+    font-weight: 600;
+    color: black;
+    text-align: left;
+}
+
+
+@media only screen and (min-width: 900px){
+  .top-bar-items-right{
+    width: 10% !important;
+    float: right !important;
+    margin-right: 5%;
+  }
+}
