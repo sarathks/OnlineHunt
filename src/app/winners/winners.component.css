@@ -2,7 +2,8 @@
   background-image: url(../../assets/images/login.png);
   background-repeat: no-repeat;
   background-position: center;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
 }
 
 .top-bar{
