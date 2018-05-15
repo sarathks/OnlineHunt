@@ -6,7 +6,7 @@ We are here to help you. It is a simple setup for creating a front end portal fo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
 
-## Thing you need to do
+## Things you need to do
 
 1. Download the code
 2. Navigate in to the project folder
