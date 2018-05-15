@@ -1,4 +1,4 @@
-# online Treasure Hunt
+# Online Treasure Hunt
 You gonna conduct a hunt game !!
 
 Are you struggling to create an online portal for it ?
